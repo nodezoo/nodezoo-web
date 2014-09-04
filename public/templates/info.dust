@@ -1,0 +1,9 @@
+{>"layouts/master" /}
+
+{<body}
+<h1>name: {.mod.id}</h1>
+<ul>
+  <li>npm:    {.mod.npm}</li>
+  <li>github: {.mod.github}</li>
+</ul>
+{/body}
