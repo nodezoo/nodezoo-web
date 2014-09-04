@@ -8,6 +8,8 @@ module.exports = function (router) {
 
   router.get('/:mod', function (req, res) {
     var mod = req.params.mod
+    console.log("++++++++++++");
+    console.log(mod);
 
     req.seneca.act('role:info,cmd:get',{name:mod}, function(err,mod){
       if( err ) return res.status(500).end();
@@ -16,6 +18,7 @@ module.exports = function (router) {
       var model = {
         mod:  mod
       }
+      console.log("****************");
 
       console.log(mod)
 
