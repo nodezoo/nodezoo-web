@@ -17,8 +17,6 @@ module.exports = function (router) {
         mod:  mod
       }
 
-      console.log(mod)
-
       res.render('info', model);
     })
   });
