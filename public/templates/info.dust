@@ -1,45 +1,22 @@
 {>"layouts/master" /}
 
 {<body}
-{#.mod}
-  <div class="page-header">
-    <h1>{npm.name}</h1>
-  </div>
-  {#npm}
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <a data-toggle="collapse" href="#collapseNpm"><h2 class="panel-title">NPM</h2></a>
+  {#.mod}
+    <div class="page-header">
+      <h1>{npm.name}</h1>
     </div>
-    <div id="collapseNpm" class="panel-collapse collapse in">
-      <ul class="list-group">
-        <li class="list-group-item"><b>Name:</b> {name}</li>
-        <li class="list-group-item"><b>Id:</b> {id}</li>
-        <li class="list-group-item"><b>Version:</b> {version}</li>
-        <li class="list-group-item"><b>Git Url:</b> {giturl}</li>
-      </ul>
-    </div>
-  </div>
-  {/npm}
+    {#npm}
+    {>"partials/npm" info=this /}
+    {:else}
+    {>"partials/loading" title="NPM" /}
+    {/npm}
 
-  {#github}
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <a data-toggle="collapse" href="#collapseGit"><h2 class="panel-title">GIT</h2></a>
-    </div>
-    <div id="collapseGit" class="panel-collapse collapse in">
-      <ul class="list-group">
-        <li class="list-group-item"><b>Last Modified:</b> {last}</li>
-        <li class="list-group-item"><b>Id:</b> {id}</li>
-        <li class="list-group-item"><b>Repo:</b> {repo}</li>
-        <li class="list-group-item"><b>Forks:</b> {forks}</li>
-        <li class="list-group-item"><b>Stars:</b> {stars}</li>
-        <li class="list-group-item"><b>Watchers:</b> {watches}</li>
-        <li class="list-group-item"><b>User:</b> {user}</li>
-      </ul>
-    </div>
-  </div>
-  {/github}
-{:else}
-  <div>Loading...Please refresh!<div>
-{/.mod}
+    {#github}
+    {>"partials/git" info=this /}
+    {:else}
+    {>"partials/loading" title="GIT" /}
+    {/github}
+  {:else}
+    {>"partials/loading" title="Loading" /}
+  {/.mod}
 {/body}
