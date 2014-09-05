@@ -1,0 +1,16 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <a data-toggle="collapse" href="#collapseGit"><h2 class="panel-title">GIT</h2></a>
+  </div>
+  <div id="collapseGit" class="panel-collapse collapse in">
+    <ul class="list-group">
+      <li class="list-group-item"><b>Last Modified:</b> {last}</li>
+      <li class="list-group-item"><b>Id:</b> {id}</li>
+      <li class="list-group-item"><b>Repo:</b> {repo}</li>
+      <li class="list-group-item"><b>Forks:</b> {forks}</li>
+      <li class="list-group-item"><b>Stars:</b> {stars}</li>
+      <li class="list-group-item"><b>Watchers:</b> {watches}</li>
+      <li class="list-group-item"><b>User:</b> {user}</li>
+    </ul>
+  </div>
+</div>

@@ -1,9 +1,22 @@
 {>"layouts/master" /}
 
 {<body}
-<h1>name: {.mod.id}</h1>
-<ul>
-  <li>npm:    {.mod.npm}</li>
-  <li>github: {.mod.github}</li>
-</ul>
+  {#.mod}
+    <div class="page-header">
+      <h1>{npm.name}</h1>
+    </div>
+    {#npm}
+    {>"partials/npm" info=this /}
+    {:else}
+    {>"partials/loading" title="NPM" /}
+    {/npm}
+
+    {#github}
+    {>"partials/git" info=this /}
+    {:else}
+    {>"partials/loading" title="GIT" /}
+    {/github}
+  {:else}
+    {>"partials/loading" title="Loading" /}
+  {/.mod}
 {/body}

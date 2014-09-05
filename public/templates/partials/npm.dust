@@ -1,0 +1,13 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <a data-toggle="collapse" href="#collapseNpm"><h2 class="panel-title">NPM</h2></a>
+  </div>
+  <div id="collapseNpm" class="panel-collapse collapse in">
+    <ul class="list-group">
+      <li class="list-group-item"><b>Name:</b> {name}</li>
+      <li class="list-group-item"><b>Id:</b> {id}</li>
+      <li class="list-group-item"><b>Version:</b> {version}</li>
+      <li class="list-group-item"><b>Git Url:</b> {giturl}</li>
+    </ul>
+  </div>
+</div>

@@ -1,5 +1,7 @@
 'use strict';
 
+require('./lib/helper-formatDate');
+
 
 var kraken = require('kraken-js'),
     app = require('express')(),

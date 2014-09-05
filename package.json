@@ -18,6 +18,7 @@
     "kraken-js": "^1.0.1",
     "less": "^1.7.5",
     "localizr": "^0.1.0",
+    "moment": "^2.8.3",
     "seneca-jsonfile-store": "^0.1.9"
   },
   "devDependencies": {

@@ -11,7 +11,6 @@ module.exports = function (router) {
 
     req.seneca.act('role:info,cmd:get',{name:mod}, function(err,mod){
       if( err ) return res.status(500).end();
-      if( !mod ) return res.status(404).end();
 
       var model = {
         mod:  mod
