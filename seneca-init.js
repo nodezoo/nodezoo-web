@@ -12,6 +12,7 @@ if( 'dev' != api.options().env ) {
     .use('./lib/api.js')
 
     .client({port:9100,pin:'role:info'})
+    .client({port:9003,pin:'role:search'})
 
     .listen(9000)
 }
@@ -22,6 +23,7 @@ else {
     .use('../nodezoo-github')
     .use('../nodezoo-npm')
     .use('../nodezoo-info')
+    .use('../nodezoo-index')
     .use('./lib/api.js')
   
     .add('role:info,req:part',function(args,done){
