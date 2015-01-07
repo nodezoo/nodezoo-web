@@ -11,8 +11,8 @@ if( 'dev' != api.options().env ) {
   api
     .use('./lib/api.js')
 
-    .client({port:9100,pin:'role:info'})
-    .client({port:9003,pin:'role:search'})
+    .client({host: '192.168.59.103', port:9100,pin:'role:info'})
+    .client({host: '192.168.59.103', port:9003,pin:'role:search'})
 
     .listen(9000)
 }
