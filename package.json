@@ -18,8 +18,8 @@
     "kraken-js": "^1.0.1",
     "less": "^1.7.5",
     "localizr": "^0.1.0",
-    "seneca": "^0.5.20",
-    "seneca-jsonfile-store": "^0.1.9"
+    "seneca": "../seneca",
+    "seneca-jsonfile-store": "../seneca-jsonfile-store"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
