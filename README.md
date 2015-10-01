@@ -1,3 +1,0 @@
-# nodezoo-web
-
-nodezoo-web

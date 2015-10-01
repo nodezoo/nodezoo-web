@@ -1,8 +1,0 @@
-<br />
-<div class="jumbotron">
-  <div class="container">
-    <h3>{title}</h3>
-    <p>Loading info. Please refresh the page.</p>
-    <p><a href="#" class="btn btn-primary btn-lg" role="button">Refresh</a></p>
-  </div>
-</div>
