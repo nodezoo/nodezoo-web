@@ -22,3 +22,6 @@ test/mine.options.js
 test/data
 
 .build
+
+old/*
+bower_components/*

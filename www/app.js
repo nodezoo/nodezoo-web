@@ -97,7 +97,7 @@ app.query = function(q) {
   app.record_search(q)
 
   $.ajax({
-    url: "/api/1.0/query?q="+eq,
+    url: "/api/query?q="+eq,
     success: app.display_results
   })
 }

@@ -1,0 +1,27 @@
+{
+  "name": "nodezoo-web",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rjrodger/nodezoo-web.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rjrodger/nodezoo-web/issues"
+  },
+  "homepage": "https://github.com/rjrodger/nodezoo-web",
+  "dependencies": {
+    "chairo": "^0.1.0",
+    "handlebars": "^4.0.3",
+    "hapi": "^10.1.0",
+    "inert": "^3.0.1",
+    "seneca": "^0.6.5",
+    "vision": "^3.0.0"
+  }
+}
