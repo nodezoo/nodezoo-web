@@ -5,6 +5,8 @@ var chairo     = require('chairo')
 var handlebars = require('handlebars')
 
 
+var HOST = process.env.HOST||'localhost'
+
 var server = new hapi.Server()
 server.connection({ port: 8000 })
 server.register( vision, fail )
@@ -13,8 +15,8 @@ server.register( {register:chairo, options:{}}, function(err){
   if(err) return fail(err)
  
   server.seneca
-    .client({port:44001,pin:'role:info'})
-    .client({port:44002,pin:'role:search'})
+    .client({host:HOST,port:44001,pin:'role:info'})
+    .client({host:HOST,port:44002,pin:'role:search'})
     .listen(44000)
     .repl(43000)
 
