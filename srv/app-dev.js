@@ -1,4 +1,6 @@
 
+var HOST = process.env.HOST || 'localhost'
+
 require('..')(
   {
     hapi: { port: 8000 },
@@ -10,24 +12,15 @@ require('..')(
     server.seneca
       .repl(43000)
 
-      .add('role:search,cmd:search',function(msg,done){
-        done(null,{items:[{
-          name:'foo',
-          version:'0.0.0'
-        }]})
-      })
+      .client({ host:HOST, port:44001, pin:'role:info' })
+      .client({ host:HOST, port:44002, pin:'role:search' })
 
-      .add('role:info,cmd:get',function(msg,done){
-        done(null,{npm:{
-          name:'foo',
-          version:'0.0.0'
-        }})
-      })
+      .listen(44000)
 
-    .ready(function(){
-      server.seneca.log.info('hapi',server.info)
-      server.start(fail)
-    })
+      .ready(function(){
+        server.seneca.log.info('hapi',server.info)
+        server.start(fail)
+      })
   })
 
 
