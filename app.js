@@ -13,10 +13,21 @@ server.register( {register:chairo, options:{}}, function(err){
   if(err) return fail(err)
  
   server.seneca
-    .client({port:9100,pin:'role:info'})
-    .client({port:9003,pin:'role:search'})
     .repl(43000)
 
+    .add('role:search,cmd:search',function(msg,done){
+      done(null,{items:[{
+        name:'foo',
+        version:'0.0.0'
+      }]})
+    })
+
+    .add('role:info,cmd:get',function(msg,done){
+      done(null,{npm:{
+        name:'foo',
+        version:'0.0.0'
+      }})
+    })
 })
 
 
