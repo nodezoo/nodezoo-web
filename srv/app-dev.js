@@ -9,6 +9,7 @@ require('..')(
   function(server){
     server.seneca
       .repl(43000)
+      .listen(44000)
 
       .add('role:search,cmd:search',function(msg,done){
         done(null,{items:[{
