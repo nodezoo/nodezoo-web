@@ -8,7 +8,7 @@ EXPOSE 8000
 EXPOSE 43000
 EXPOSE 44000
 
-CMD ["node","srv/app-dev.js"]
+CMD ["node","srv/app-dev.js","--seneca.options.tag=web","--seneca.log.all"]
 
 # build and run:
 # $ docker build -t nodezoo-web-00 .
