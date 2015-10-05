@@ -1,5 +1,6 @@
 
 var HOST = process.env.HOST || 'localhost'
+var STATS = process.env.STATS || 'localhost'
 
 require('..')(
   {
@@ -10,6 +11,10 @@ require('..')(
   fail,
   function(server){
     server.seneca
+      .use('msgstats',{
+        udp: { host: STATS },
+        pins:['role:info,cmd:get','role:search,cmd:search']
+      })
       .repl(43000)
 
       .client({ host:HOST, port:44001, pin:'role:info' })
