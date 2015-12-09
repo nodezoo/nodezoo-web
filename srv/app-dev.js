@@ -6,21 +6,20 @@ require('..')(
   {
     hapi: { port: 8000 },
     folder: __dirname+'/..',
-    seneca: {}
+    seneca: { log:'standard' }
   },
   fail,
   function(server){
     server.seneca
+
       .use('msgstats',{
         udp: { host: STATS },
         pins:['role:info,cmd:get','role:search,cmd:search']
       })
-      .repl(43000)
 
-      .client({ host:HOST, port:44001, pin:'role:info' })
-      .client({ host:HOST, port:44002, pin:'role:search' })
+      .use('mesh',{auto:true})
 
-      .listen(44000)
+      .repl(33000)
 
       .ready(function(){
         server.seneca.log.info('hapi',server.info)

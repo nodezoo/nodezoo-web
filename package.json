@@ -1,6 +1,6 @@
 {
   "name": "nodezoo-web",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
@@ -17,12 +17,12 @@
   },
   "homepage": "https://github.com/rjrodger/nodezoo-web",
   "dependencies": {
-    "chairo": "^0.2.0",
-    "handlebars": "^4.0.3",
-    "hapi": "^10.1.0",
-    "inert": "^3.0.1",
-    "seneca": "^0.7.1",
-    "seneca-msgstats": "^0.2.0",
-    "vision": "^3.0.0"
+    "chairo": "1.1.0",
+    "handlebars": "4.0.5",
+    "hapi": "11.1.2",
+    "inert": "3.2.0",
+    "seneca": "0.9.1",
+    "seneca-msgstats": "0.2.0",
+    "vision": "4.0.1"
   }
 }
