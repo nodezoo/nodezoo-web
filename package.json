@@ -21,8 +21,10 @@
     "handlebars": "4.0.5",
     "hapi": "11.1.2",
     "inert": "3.2.0",
-    "seneca": "0.9.1",
-    "seneca-msgstats": "0.2.0",
-    "vision": "4.0.1"
+    "vision": "4.0.1",
+    "seneca": "https://github.com/senecajs/seneca",
+    "seneca-msgstats": "https://github.com/rjrodger/seneca-msgstats",
+    "seneca-mesh": "https://github.com/rjrodger/seneca-mesh",
+    "seneca-balance-client": "https://github.com/rjrodger/seneca-balance-client"
   }
 }
