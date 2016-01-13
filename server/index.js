@@ -6,12 +6,18 @@ var HOST = process.env.HOST || 'localhost'
 var STATS = process.env.STATS || 'localhost'
 
 // 8000 by default or whatever you set the env variable to
-var PORT = port: process.env.PORT || 8000
+var PORT = process.env.PORT || 8000
 
 // Our hapi server bits
 var Chairo = require('chairo')
 var Hapi = require('hapi')
 var Boom = require('boom')
+var Inert = require('inert')
+var Path = require('path')
+
+// Our server routes
+var ClientRoutes = require('./routes/client')
+var ApiRoutes = require('./routes/api')
 
 // Log and end the process
 // if an error is encountered
@@ -44,7 +50,7 @@ server.register(plugins, function (err) {
 
   // Wire up our http routes
   server.route(ClientRoutes)
-  server.route(AuthRoutes)
+  server.route(ApiRoutes)
 
   // Set up our seneca plugins
   var seneca = server.seneca

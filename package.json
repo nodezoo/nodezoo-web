@@ -42,6 +42,7 @@
     "redux-logger": "2.3.x",
     "redux-simple-router": "1.0.x",
     "redux-thunk": "1.0.x",
+    "seneca-msgstats": "^0.2.0",
     "style-loader": "0.13.x",
     "superagent": "1.6.x",
     "url-loader": "0.5.x",

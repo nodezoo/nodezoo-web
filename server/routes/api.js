@@ -19,7 +19,7 @@ module.exports = [
   },
   {
     method: 'GET',
-    path: 'api/info/{name}',
+    path: '/api/info/{name}',
     handler: function (request, reply) {
       var pattern = {role: 'info', cmd: 'get'}
       var payload = {name: request.params.name}

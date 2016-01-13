@@ -3,17 +3,21 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-export const Home = React.createClass({
+export const Info = React.createClass({
   propTypes: {
-    info: React.PropTypes.object.isRequired
+    dispatch: React.PropTypes.func.isRequired,
+  },
+
+  componentDidMount () {
+    const dispatch = this.props.dispatch
   },
 
   render () {
-    const {info} = this.props
+    const moduleName = this.props.params.moduleName
 
     return (
       <div className="info">
-        infoSection
+        {moduleName}
       </div>
     )
   }
@@ -21,8 +25,8 @@ export const Home = React.createClass({
 
 function mapStatesToProps (state) {
   return {
-    info: state.info
+    info: state.moduleInfo
   }
 }
 
-export default connect(mapStatesToProps)(Home)
+export default connect(mapStatesToProps)(Info)

@@ -6,7 +6,7 @@ var Path = require('path')
 var buildPath = Path.resolve(__dirname, 'dist')
 var nodeModulesPath = Path.resolve(__dirname, 'node_modules')
 var entryPath = Path.join(__dirname, '/client/app.js')
-var clientPath = Path.resolve(__dirname, "client")
+var clientPath = Path.resolve(__dirname, "./client")
 
 module.exports = {
   entry: [entryPath],
@@ -33,6 +33,10 @@ module.exports = {
     {
       test: /\.woff$|\.woff2$|\.svg$|\.ttf$|\.eot$/,
       loader: 'url?limit=10000&name=fonts/[hash].[ext]'
+    },
+    {
+      test: /\.(png|jpg)$/,
+      loader: 'file?limit=10000&name=img/[hash].[ext]'
     }]
   }
 }
