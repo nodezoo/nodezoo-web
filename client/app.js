@@ -2,6 +2,8 @@
 
 import './index.html'
 import './assets/css/styles.css'
+import './assets/css/normalize.css'
+import './assets/css/flexboxgrid.css'
 
 import ReactDom from 'react-dom'
 
