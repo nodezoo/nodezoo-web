@@ -114,8 +114,8 @@ div.main {
     xborder: 0px;
     font:italic 14px arial;
     outline:none;
-    height: 40px;  
-    padding-left: 10px;  
+    height: 40px;
+    padding-left: 10px;
     color: #8b9298;
     font-weight: bold;
     vertical-align:bottom;
@@ -435,6 +435,3 @@ div.tm {
     text-decoration: underline;
     cursor: pointer;
 }
-
-
-
