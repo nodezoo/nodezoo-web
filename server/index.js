@@ -11,7 +11,6 @@ var PORT = process.env.PORT || 8000
 // Our hapi server bits
 var Chairo = require('chairo')
 var Hapi = require('hapi')
-var Boom = require('boom')
 var Inert = require('inert')
 var Path = require('path')
 
@@ -58,7 +57,7 @@ server.register(plugins, function (err) {
   // Capture metrics for each pinned pattern.
   seneca.use('msgstats', {
     udp: {host: STATS},
-    pins:['role:info,cmd:get','role:search,cmd:search']
+    pins: ['role:info,cmd:get', 'role:search,cmd:search']
   })
 
   // Enable Seneca's built in repl
@@ -72,7 +71,7 @@ server.register(plugins, function (err) {
 
   // Once seneca is ready we start our server
   seneca.ready(function () {
-    seneca.log.info('hapi',server.info)
+    seneca.log.info('hapi', server.info)
     server.start(endIfErr)
   })
 })
