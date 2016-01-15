@@ -10,7 +10,7 @@ var entryPath = Path.join(contextPath, '/app.js')
 module.exports = {
   context: contextPath,
   entry: entryPath,
-  resolve: ["", ".js", ".jsx"],
+  resolve: ['', '.js', '.jsx'],
   debug: true,
   output: {
     path: buildPath,
