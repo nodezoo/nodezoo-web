@@ -8,7 +8,7 @@ import {
 const infoState = {
   isGettingInfo: false,
   hasError: false,
-  error: null
+  error: null,
   result: null
 }
 
@@ -18,7 +18,7 @@ export default function info (state = infoState, action) {
       return Object.assign({}, state, {
         isGettingInfo: true,
         hasError: false,
-        error: null
+        error: null,
         result: null
       })
 
@@ -26,7 +26,7 @@ export default function info (state = infoState, action) {
       return Object.assign({}, state, {
         isGettingInfo: false,
         hasError: action.hasError,
-        error: action.error
+        error: action.error,
         result: action.result
       })
 
