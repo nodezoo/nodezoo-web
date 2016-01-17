@@ -8,7 +8,7 @@
     "Dean McDonnell",
     "Karolina Szczur"
   ],
-  "main": "./server.index.js",
+  "main": "./server.start.js",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
     "lint": "lab server/test -dL",
     "build": "webpack --progress --colors",
     "watch": "webpack -w",
-    "start": "node ./server/index.js"
+    "start": "node ./server/start.js"
   },
   "dependencies": {
     "babel-core": "6.4.x",
@@ -43,7 +43,7 @@
     "redux-logger": "2.3.x",
     "redux-simple-router": "1.0.x",
     "redux-thunk": "1.0.x",
-    "seneca-msgstats": "^0.2.0",
+    "seneca-msgstats": "https://github.com/rjrodger/seneca-msgstats",
     "style-loader": "0.13.x",
     "superagent": "1.6.x",
     "webpack": "1.12.x"
