@@ -1,0 +1,43 @@
+/*--------------------------------------------------------------------
+*
+* LOGOS
+*
+--------------------------------------------------------------------*/
+
+.logo {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  transition: opacity .5s ease-in;
+}
+
+.logo:hover {
+  opacity: .6;
+}
+
+/* Nodezoo logo */
+
+.logo-nodezoo {
+  height: 100px;
+  width: 213px;
+  background-image: url("../../img/logo-nodezoo.svg");
+}
+
+/* Github and Npm shared logo styles */
+
+.logo-git,
+.logo-npm {
+  height: 17px;
+  width: 17px;
+}
+
+/* Github logo */
+.logo-git {
+  background-image: url("../../img/logo-github.svg");
+}
+
+/* Npm logo */
+.logo-npm {
+  background-image: url("../../img/logo-npm.svg");
+}

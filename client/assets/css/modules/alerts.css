@@ -1,0 +1,26 @@
+/*--------------------------------------------------------------------
+*
+* ALERTS
+*
+--------------------------------------------------------------------*/
+
+.alert {
+  margin-top: 30px;
+  padding: 15px 30px;
+  border-radius: 3px;
+}
+
+.alert p {
+  line-height: 2;
+}
+
+.alert-has-icon p {
+  display: inline-block;
+}
+
+/* Informational alert */
+
+.alert-info {
+  color: #1C8DC6;
+  background-color: #e1f3fb;
+}

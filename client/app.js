@@ -1,9 +1,14 @@
 'use strict'
 
 import './index.html'
-import './assets/css/styles.css'
+
 import './assets/css/normalize.css'
 import './assets/css/flexboxgrid.css'
+
+import './assets/css/app.css'
+
+
+
 
 import ReactDom from 'react-dom'
 

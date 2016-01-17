@@ -49,7 +49,7 @@ module.exports = {
         loader: 'style-loader!css-loader!postcss-loader!stylus-loader'
       },
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png|jpg|svg|gif)$/,
         include: Path.join(contextPath, 'assets/img'),
         loader: 'url-loader?limit=8192&name=img/[hash].[ext]'
       },
