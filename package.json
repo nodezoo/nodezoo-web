@@ -50,10 +50,8 @@
   },
   "devDependencies": {
     "code": "2.1.0",
-    "node-sass": "^3.4.2",
     "postcss": "^5.0.14",
     "postcss-loader": "^0.8.0",
-    "sass-loader": "^3.1.2",
     "stylus-loader": "^1.4.3",
     "url-loader": "^0.5.7",
     "eslint-config-seneca": "1.1.2",
