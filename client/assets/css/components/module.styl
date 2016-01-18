@@ -1,0 +1,56 @@
+/*--------------------------------------------------------------------
+*
+* MODULE
+*
+--------------------------------------------------------------------*/
+
+.module-header
+  padding: $ui-spacing-half $ui-spacing
+  margin-bottom: 0
+  border-top: $ui-border
+  border-left: $ui-border
+  border-right: $ui-border
+  border-radius: 3px 3px 0 0
+  background-color: #f1f1f1
+
+.module-similar
+  font-size: $font-small
+
+.module-details p,
+.module-details ul
+  margin-left: 45px
+
+.module-details .logo-git,
+.module-details .logo-npm
+  margin-left: $ui-spacing-half
+
+.module-info-heading
+  display: inline-block
+  width: 80px
+  font-size: $font-h3
+  font-weight: $font-weight-bold
+  color: $gray
+
+.module-info-list
+  li
+    color: $gray-light
+    margin-bottom: 5px
+
+.module-result
+  &:not(:last-of-type)
+    border-bottom: $ui-border
+
+.module-sources
+  line-height: 0
+
+@media screen and (min-width: 767px)
+
+  .module-git-info
+    text-align: right
+    
+  .module-header
+    h1
+      text-align: left
+    a
+      text-align: right
+

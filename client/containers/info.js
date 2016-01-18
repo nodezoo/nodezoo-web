@@ -20,7 +20,12 @@ export const Info = React.createClass({
         <div className="row center-xs">
           <div className="col-xs-12 col-sm-8 col-md-8 col-rg-6">
 
-          <h1 className="module-header">Seneca</h1>
+            <div className="module-header cf">
+              <div className="row middle-xs">
+                <h1 className="col-xs-12 col-sm-7 m0">Seneca</h1>
+                <a href="/" className="col-xs-12 col-sm-5">← Back to search results</a>
+              </div>
+            </div>
 
           <div className="panel panel-module-info txt-left">
             <div className="panel-module">

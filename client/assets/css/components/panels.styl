@@ -1,0 +1,21 @@
+/*--------------------------------------------------------------------
+*
+* PANELS
+*
+--------------------------------------------------------------------*/
+
+.panel
+  margin-bottom: $ui-spacing
+  padding: @margin-bottom
+  border: $ui-border
+  border-radius: $ui-radius
+  
+  &.panel-module-info
+    border-radius: 0 0 3px 3px
+
+.panel-module
+  &:not(:last-of-type)
+    padding-bottom: $ui-spacing
+    margin-bottom: @padding-bottom
+    border-bottom: $ui-border
+

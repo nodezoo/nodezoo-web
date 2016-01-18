@@ -2,10 +2,7 @@
 
 import './index.html'
 
-import './assets/css/normalize.css'
-import './assets/css/flexboxgrid.css'
-
-import './assets/css/app.css'
+import './assets/css/app.styl'
 
 
 
