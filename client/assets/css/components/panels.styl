@@ -5,16 +5,17 @@
 --------------------------------------------------------------------*/
 
 .panel
-  margin-bottom: 30px
-  padding: 30px
-  border: 1px solid #ddd
-  border-radius: 3px
+  margin-bottom: $ui-spacing
+  padding: @margin-bottom
+  border: $ui-border
+  border-radius: $ui-radius
+  
   &.panel-module-info
     border-radius: 0 0 3px 3px
 
 .panel-module
   &:not(:last-of-type)
-    padding-bottom: 30px
-    margin-bottom: 30px
-    border-bottom: 1px solid #ddd
+    padding-bottom: $ui-spacing
+    margin-bottom: @margin-bottom
+    border-bottom: $ui-border
 

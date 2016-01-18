@@ -8,30 +8,30 @@ html
   font-size: 100%
 
 body
-  color: #333
-  font-family: "Roboto", sans-serif
-  font-size: 1rem
-  line-height: 1.5
+  color: $gray
+  font-family: "Roboto", Helvetica, Arial, sans-serif
+  font-size: $font-base
+  line-height: $line-height-base
   text-rendering: optimizeSpeed
 
 // Headings
 
 h1
-  font-size: 2rem
+  font-size: $font-h1
 
 h2
-  font-size: 1.5rem
+  font-size: $font-h2
 
 h3
-  font-size: 1.125rem
+  font-size: $font-h3
 
 h1, h2, h3
-  font-weight: 400
+  font-weight: $font-weight-regular
 
 // Helpers
 
 .txt-small
-  font-size: 0.875rem
+  font-size: $font-small
 
 .txt-center
   text-align: center
@@ -43,5 +43,5 @@ h1, h2, h3
   text-align: right
 
 .txt-dimmed
-  color: #888
+  color: $gray-light
 

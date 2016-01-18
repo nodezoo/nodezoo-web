@@ -6,37 +6,38 @@
 
 // Inputs
 input
-  border: 1px solid #ddd
-  border-radius: 3px
-  padding: 10px
+  border: $ui-border
+  border-radius: $ui-radius
+  padding: $ui-spacing-third
   font-size: inherit
   transition: all .3s ease-in
+  
   &:focus
-    border: 1px solid #66cafc
-    box-shadow: 0 0 5px #66cafc
+    border: 1px solid $blue-light
+    box-shadow: 0 0 5px $blue-light
     outline: none
 
 .input-large
-  padding: 20px 15px
+  padding: 20px $ui-spacing-half
 
 // Form
 form
   &.panel
     margin-top: 0
-    padding: 60px 30px
+    padding: $ui-spacing-double $ui-spacing
 
 // Fieldsets
 fieldset
-  margin-bottom: 15px
+  margin-bottom: $ui-spacing-half
   padding: 0
   border: none
-  font-size: 1.5rem
+  font-size: $font-h2
 
 @media screen and (max-width: 30em)
   input[type=search]
     box-sizing: border-box
     width: 100%
-    margin-bottom: 10px
+    margin-bottom: $ui-spacing-third
 
 @media screen and (min-width: 31em) and (max-width: 48em)
   input[type=search]

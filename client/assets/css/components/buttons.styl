@@ -5,29 +5,28 @@
 --------------------------------------------------------------------*/
 
 .btn
-  border-radius: 3px
-  padding: 8px 15px
+  border-radius: $ui-radius
+  padding: 8px $ui-spacing-half
   border: none
   color: white
   font-size: inherit
-  background-color: #1C8DC6
+  background-color: $blue
   cursor: pointer
   user-select: none
   transition: all .5s ease-in
+  
   &:focus
     outline: none
+    
   &:hover
-    background-color: #42baf6
+    background-color: $blue-light
 
 // Button sizes
 .btn-large
   padding: 18px 50px
 
-.btn-small
-  padding: 5px 10px
-  font-size: 0.875rem
-
 @media screen and (max-width: 480px)
+
   .btn
     width: 100%
 
