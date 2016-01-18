@@ -4,61 +4,51 @@
 *
 --------------------------------------------------------------------*/
 
-.module-header {
-  padding: 15px 30px;
-  margin-bottom: 0;
-  border-top: 1px solid #ddd;
-  border-left: 1px solid #ddd;
-  border-right: 1px solid #ddd;
-  border-radius: 3px 3px 0 0;
-  background-color: #f1f1f1;
-}
+.module-header
+  padding: 15px 30px
+  margin-bottom: 0
+  border-top: 1px solid #ddd
+  border-left: 1px solid #ddd
+  border-right: 1px solid #ddd
+  border-radius: 3px 3px 0 0
+  background-color: #f1f1f1
 
-.module-similar {
-  font-size: 0.875rem;
-}
+.module-similar
+  font-size: 0.875rem
 
 .module-details p,
-.module-details ul {
-  margin-left: 45px;
-}
+.module-details ul
+  margin-left: 45px
 
 .module-details .logo-git,
-.module-details .logo-npm {
-  margin-left: 15px;
-}
+.module-details .logo-npm
+  margin-left: 15px
 
-.module-info-heading {
-  display: inline-block;
-  width: 80px;
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: #333;
-}
+.module-info-heading
+  display: inline-block
+  width: 80px
+  font-size: 1.125rem
+  font-weight: 700
+  color: #333
 
-.module-info-list li {
-  color: #888;
-  margin-bottom: 5px;
-}
+.module-info-list
+  li
+    color: #888
+    margin-bottom: 5px
 
-.module-result:not(:last-of-type) {
-  border-bottom: 1px solid #ddd;
-}
+.module-result
+  &:not(:last-of-type)
+    border-bottom: 1px solid #ddd
 
-.module-sources {
-  line-height: 0;
-}
+.module-sources
+  line-height: 0
 
-@media screen and (min-width: 767px) {
-  .module-git-info {
-    text-align: right;
-  }
-  
-  .module-header h1 {
-    text-align: left;
-  }
-    
-  .module-header a {
-    text-align: right;
-  }
-}
+@media screen and (min-width: 767px)
+  .module-git-info
+    text-align: right
+  .module-header
+    h1
+      text-align: left
+    a
+      text-align: right
+

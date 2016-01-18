@@ -4,59 +4,42 @@
 *
 --------------------------------------------------------------------*/
 
-/* Box sizing */
+// Box sizing
+*, *:after, *:before
+  box-sizing: border-box
 
-*, *:after, *:before {
-  box-sizing: border-box;
-}
+// Selection highlight
+::-moz-selection
+  background-color: #c8edff
 
-/* Selection highlight */
+::selection
+  background-color: #c8edff
 
-::-moz-selection {
-  background-color: #c8edff;
-}
+// Paragraphs
+p
+  margin-top: 0
+  margin-bottom: 30px
 
-::selection {
-  background-color: #c8edff;
-}
+// Links
+a
+  color: #1C8DC6
+  text-decoration: none
+  cursor: pointer
+  &:hover
+    color: #42baf6
+  &:focus
+    outline: none
 
-/* Paragraphs */
-
-p {
-  margin-top: 0;
-  margin-bottom: 30px;
-}
-
-/* Links */
-
-a {
-  color: #1C8DC6;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-a:hover {
-  color: #42baf6;
-}
-
-a:focus {
-  outline: none;
-}
-
-/* Clearfix */
-
+// Clearfix
 .cf:before,
-.cf:after {
-  content: " ";
-  display: table;
-}
+.cf:after
+  content: " "
+  display: table
 
-.cf:after {
-  clear: both;
-}
+.cf
+  &:after
+    clear: both
 
-/* Media */
-
-img, iframe, video {
-  max-width: 100%;
-}
+// Media
+img, iframe, video
+  max-width: 100%

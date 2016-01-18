@@ -4,41 +4,30 @@
 *
 --------------------------------------------------------------------*/
 
-.btn {
-  border-radius: 3px;
-  padding: 8px 15px;
-  border: none;
-  color: white;
-  font-size: inherit;
-  background-color: #1C8DC6;
-  cursor: pointer;
-  user-select: none;
-  transition: all .5s ease-in;
-}
+.btn
+  border-radius: 3px
+  padding: 8px 15px
+  border: none
+  color: white
+  font-size: inherit
+  background-color: #1C8DC6
+  cursor: pointer
+  user-select: none
+  transition: all .5s ease-in
+  &:focus
+    outline: none
+  &:hover
+    background-color: #42baf6
 
-.btn:focus {
-  outline: none;
-}
+// Button sizes
+.btn-large
+  padding: 18px 50px
 
-.btn:hover {
-  background-color: #42baf6;
-}
+.btn-small
+  padding: 5px 10px
+  font-size: 0.875rem
 
-/* Button sizes */
+@media screen and (max-width: 480px)
+  .btn
+    width: 100%
 
-.btn-large {
-  padding: 18px 50px;
-}
-
-.btn-small {
-  padding: 5px 10px;
-  font-size: 0.875rem;
-}
-
-@media screen and (max-width: 480px) {
-  
-  .btn {
-    width: 100%;
-  }
-
-}
