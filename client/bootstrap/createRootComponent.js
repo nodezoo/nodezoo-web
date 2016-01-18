@@ -8,6 +8,10 @@ import {createHistory} from 'history'
 import {syncReduxAndRouter} from 'redux-simple-router'
 import {Router, Route, IndexRoute} from 'react-router'
 
+import {getInfo} from '../actions/info'
+
+import { pushPath } from 'redux-simple-router'
+
 // Our container components.
 import Shell from '../containers/shell'
 import Home from '../containers/home'
@@ -18,6 +22,10 @@ export default function createRootComponent (store) {
   // Sets react router up so that it uses browser
   // history, enables client side routing
   const history = createHistory()
+
+  function handleInfo (nextState, replaceState) {
+    store.dispatch(pushPath('/'))
+  }
 
   // Binds redux and react router so
   // that state is shared between both.
@@ -31,7 +39,8 @@ export default function createRootComponent (store) {
       <Router history={history}>
         <Route path="/" component={Shell}>
           <IndexRoute component={Home} />
-          <Route path="info/:moduleName" component={Info} />
+          <Route path="info/:moduleName" component={Info}/>
+          <Route path="info" onEnter={handleInfo}/>
         </Route>
       </Router>
     </Provider>

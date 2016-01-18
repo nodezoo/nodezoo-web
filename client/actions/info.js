@@ -1,7 +1,7 @@
-
 'use strict'
 
 import Request from 'superagent/lib/client'
+import { pushPath } from 'redux-simple-router'
 
 export const INFO_REQUEST = 'INFO_REQUEST'
 export const INFO_RESPONSE = 'INFO_RESPONSE'
@@ -32,3 +32,4 @@ export function getInfo (moduleName) {
       })
     }
   }
+}
