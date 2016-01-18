@@ -28,6 +28,12 @@
 
 .logo-git,
 .logo-npm {
+  height: 20px;
+  width: 20px;
+}
+
+.logo-git-large,
+.logo-npm-large {
   height: 30px;
   width: 30px;
 }

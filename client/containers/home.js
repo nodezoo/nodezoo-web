@@ -45,8 +45,8 @@ export const Home = React.createClass({
                   </h3>
 
                   <div className="fl-right module-sources">
-                    <a className="logo logo-npm" target="_blank"></a>
-                    <a className="logo logo-git" target="_blank"></a>
+                    <a className="logo logo-npm logo-npm-large" target="_blank"></a>
+                    <a className="logo logo-git logo-git-large" target="_blank"></a>
                   </div>
                 </div>
 
@@ -86,8 +86,8 @@ export const Home = React.createClass({
                   </h3>
 
                   <div className="fl-right module-sources">
-                    <a className="logo logo-npm" target="_blank"></a>
-                    <a className="logo logo-git" target="_blank"></a>
+                    <a className="logo logo-npm logo-npm-large" target="_blank"></a>
+                    <a className="logo logo-git logo-git-large" target="_blank"></a>
                   </div>
                 </div>
 
@@ -127,8 +127,8 @@ export const Home = React.createClass({
                   </h3>
 
                   <div className="fl-right module-sources">
-                    <a className="logo logo-npm" target="_blank"></a>
-                    <a className="logo logo-git" target="_blank"></a>
+                    <a className="logo logo-npm logo-npm-large" target="_blank"></a>
+                    <a className="logo logo-git logo-git-large" target="_blank"></a>
                   </div>
                 </div>
 
@@ -168,8 +168,8 @@ export const Home = React.createClass({
                   </h3>
 
                   <div className="fl-right module-sources">
-                    <a className="logo logo-npm" target="_blank"></a>
-                    <a className="logo logo-git" target="_blank"></a>
+                    <a className="logo logo-npm logo-npm-large" target="_blank"></a>
+                    <a className="logo logo-git logo-git-large" target="_blank"></a>
                   </div>
                 </div>
 
