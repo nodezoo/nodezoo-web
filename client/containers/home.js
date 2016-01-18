@@ -41,7 +41,7 @@ export const Home = React.createClass({
                 <span className="icon icon-hex-4"></span>
                 <div className="cf">
                   <h3 className="m0 fl-left">
-                    <a className="module-site" target="_blank">seneca</a>
+                    <a className="module-site" target="_blank" href="/info/seneca">seneca</a>
                   </h3>
 
                   <div className="fl-right">
@@ -82,7 +82,7 @@ export const Home = React.createClass({
                 <span className="icon icon-hex-4"></span>
                 <div className="cf">
                   <h3 className="m0 fl-left">
-                    <a className="module-site" target="_blank">Module name</a>
+                    <a className="module-site" target="_blank" href="/info/seneca">Module name</a>
                   </h3>
 
                   <div className="fl-right">
@@ -123,7 +123,7 @@ export const Home = React.createClass({
                 <span className="icon icon-hex-4"></span>
                 <div className="cf">
                   <h3 className="m0 fl-left">
-                    <a className="module-site" target="_blank">Module name</a>
+                    <a className="module-site" target="_blank" href="/info/seneca">Module name</a>
                   </h3>
 
                   <div className="fl-right">
@@ -164,7 +164,7 @@ export const Home = React.createClass({
                 <span className="icon icon-hex-4"></span>
                 <div className="cf">
                   <h3 className="m0 fl-left">
-                    <a className="module-site" target="_blank">Module name</a>
+                    <a className="module-site" target="_blank" href="/info/seneca">Module name</a>
                   </h3>
 
                   <div className="fl-right">
