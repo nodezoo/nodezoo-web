@@ -14,6 +14,10 @@
   background-color: #f1f1f1;
 }
 
+.module-similar {
+  font-size: 0.875rem;
+}
+
 .module-details p,
 .module-details ul {
   margin-left: 45px;
@@ -21,7 +25,7 @@
 
 .module-details .logo-git,
 .module-details .logo-npm {
-  margin-left: 5px;
+  margin-left: 15px;
 }
 
 .module-info-heading {
@@ -39,6 +43,10 @@
 
 .module-result:not(:last-of-type) {
   border-bottom: 1px solid #ddd;
+}
+
+.module-sources {
+  line-height: 0;
 }
 
 @media screen and (min-width: 767px) {

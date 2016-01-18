@@ -16,12 +16,13 @@
 .icon-star,
 .icon-fork,
 .icon-info {
-  height: 15px;
-  width: 15px;
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
 }
 
 .icon-fork {
-  width: 10px;
+  width: 15px;
   background-image: url("../../img/icon-fork.svg");
 }
 
@@ -30,9 +31,7 @@
 }
 
 .icon-info {
-  top: 3px;
-  width: 18px;
-  height: 18px;
+  top: 2px;
   background-image: url("../../img/icon-info.svg");
 }
 

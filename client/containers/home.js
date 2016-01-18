@@ -44,7 +44,7 @@ export const Home = React.createClass({
                     <a className="module-site" target="_blank" href="/info/seneca">seneca</a>
                   </h3>
 
-                  <div className="fl-right">
+                  <div className="fl-right module-sources">
                     <a className="logo logo-npm" target="_blank"></a>
                     <a className="logo logo-git" target="_blank"></a>
                   </div>
@@ -70,7 +70,7 @@ export const Home = React.createClass({
                   </li>
                 </ul>
 
-                <p className="mb0"><a className="module-similar">See similar modules →</a></p>
+                <p className="mb0 mthalf"><a className="module-similar">See similar modules →</a></p>
               </div>
             </div>
           </div>
@@ -85,7 +85,7 @@ export const Home = React.createClass({
                     <a className="module-site" target="_blank" href="/info/seneca">Module name</a>
                   </h3>
 
-                  <div className="fl-right">
+                  <div className="fl-right module-sources">
                     <a className="logo logo-npm" target="_blank"></a>
                     <a className="logo logo-git" target="_blank"></a>
                   </div>
@@ -111,7 +111,7 @@ export const Home = React.createClass({
                   </li>
                 </ul>
 
-                <p className="mb0"><a className="module-similar">See similar modules →</a></p>
+                <p className="mb0 mthalf"><a className="module-similar">See similar modules →</a></p>
               </div>
             </div>
           </div>
@@ -126,7 +126,7 @@ export const Home = React.createClass({
                     <a className="module-site" target="_blank" href="/info/seneca">Module name</a>
                   </h3>
 
-                  <div className="fl-right">
+                  <div className="fl-right module-sources">
                     <a className="logo logo-npm" target="_blank"></a>
                     <a className="logo logo-git" target="_blank"></a>
                   </div>
@@ -152,7 +152,7 @@ export const Home = React.createClass({
                   </li>
                 </ul>
 
-                <p className="mb0"><a className="module-similar">See similar modules →</a></p>
+                <p className="mb0 mthalf"><a className="module-similar">See similar modules →</a></p>
               </div>
             </div>
           </div>
@@ -167,7 +167,7 @@ export const Home = React.createClass({
                     <a className="module-site" target="_blank" href="/info/seneca">Module name</a>
                   </h3>
 
-                  <div className="fl-right">
+                  <div className="fl-right module-sources">
                     <a className="logo logo-npm" target="_blank"></a>
                     <a className="logo logo-git" target="_blank"></a>
                   </div>
@@ -193,7 +193,7 @@ export const Home = React.createClass({
                   </li>
                 </ul>
 
-                <p className="mb0"><a className="module-similar">See similar modules →</a></p>
+                <p className="mb0 mthalf"><a className="module-similar">See similar modules →</a></p>
               </div>
             </div>
           </div>
