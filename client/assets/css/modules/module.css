@@ -45,4 +45,12 @@
   .module-git-info {
     text-align: right;
   }
+  
+  .module-header h1 {
+    text-align: left;
+  }
+    
+  .module-header a {
+    text-align: right;
+  }
 }
