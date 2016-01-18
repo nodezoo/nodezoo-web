@@ -44,6 +44,8 @@
     "redux-simple-router": "1.0.x",
     "redux-thunk": "1.0.x",
     "seneca-msgstats": "https://github.com/rjrodger/seneca-msgstats",
+    "seneca-mesh": "https://github.com/rjrodger/seneca-mesh",
+    "seneca-balance-client": "https://github.com/rjrodger/seneca-balance-client",
     "style-loader": "0.13.x",
     "superagent": "1.6.x",
     "webpack": "1.12.x"

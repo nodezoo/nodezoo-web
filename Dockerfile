@@ -16,4 +16,4 @@ EXPOSE 43000
 RUN npm install
 RUN npm build
 
-CMD ["node", "server/start.js"]
+CMD ["node", "server/start.js", "--seneca.log.all"]

@@ -26,7 +26,7 @@ export function getInfo (moduleName) {
             type: INFO_RESPONSE,
             hasError: false,
             error: null,
-            result: resp.body.items
+            result: resp.body
           })
         }
       })
