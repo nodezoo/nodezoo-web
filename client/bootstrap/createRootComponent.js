@@ -24,7 +24,8 @@ export default function createRootComponent (store) {
   const history = createHistory()
 
   function handleInfo (nextState, replaceState) {
-    store.dispatch(pushPath('/'))
+    const moduleName = nextState.params.moduleName
+    store.dispatch(getInfo(moduleName))
   }
 
   // Binds redux and react router so
@@ -39,8 +40,7 @@ export default function createRootComponent (store) {
       <Router history={history}>
         <Route path="/" component={Shell}>
           <IndexRoute component={Home} />
-          <Route path="info/:moduleName" component={Info}/>
-          <Route path="info" onEnter={handleInfo}/>
+          <Route path="info(/:moduleName)" onEnter={handleInfo}/>
         </Route>
       </Router>
     </Provider>
