@@ -23,11 +23,6 @@ export default function createRootComponent (store) {
   // history, enables client side routing
   const history = createHistory()
 
-  function handleInfo (nextState, replaceState) {
-    const moduleName = nextState.params.moduleName
-    store.dispatch(getInfo(moduleName))
-  }
-
   // Binds redux and react router so
   // that state is shared between both.
   syncReduxAndRouter(history, store)
