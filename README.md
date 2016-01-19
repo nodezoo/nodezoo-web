@@ -1,3 +1,5 @@
+![Nodezoo](/client/assets/img/logo-nodezoo.png)
+
 # nodezoo-web
 Nodezoo Web is the frontend client and server for the Nodezoo search engine. Nodezoo is an example microservice system written in node.js. It is written in a workshop format and designed to help you explore a full microservice
 system. Please see the [main repo]() for more details
