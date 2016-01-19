@@ -40,7 +40,7 @@ export default function createRootComponent (store) {
       <Router history={history}>
         <Route path="/" component={Shell}>
           <IndexRoute component={Home} />
-          <Route path="info(/:moduleName)" onEnter={handleInfo}/>
+          <Route path="info(/:moduleName)" component={Info}/>
         </Route>
       </Router>
     </Provider>

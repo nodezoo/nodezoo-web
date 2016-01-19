@@ -6,7 +6,7 @@ import {getInfo} from '../actions/info'
 
 export const Info = React.createClass({
   propTypes: {
-    dispatch: React.PropTypes.func.isRequired,
+    dispatch: React.PropTypes.func.isRequired
   },
 
   componentDidMount () {

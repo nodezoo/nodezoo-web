@@ -1,7 +1,7 @@
 'use strict'
 
 import React from 'react'
-import {Home} from '../containers/home'
+import {connect} from 'react-redux'
 
 const Shell = React.createClass({
   render () {
@@ -9,10 +9,16 @@ const Shell = React.createClass({
 
     return (
       <div className="shell">
-        {children} || <Home />
+        {children}
       </div>
     )
   }
 })
 
-export default Shell
+
+function mapStatesToProps (state) {
+  return {
+  }
+}
+
+export default connect(mapStatesToProps)(Shell)

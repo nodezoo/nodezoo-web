@@ -10,26 +10,30 @@ export function getInfo (moduleName) {
   return (dispatch) => {
     dispatch({type: INFO_REQUEST})
 
-    Request
-      .get(('/api/info/' + moduleName))
-      .end((err, resp) => {
-        if (err) {
-          dispatch({
-            type: INFO_RESPONSE,
-            hasError: true,
-            error: err,
-            result: null
-          })
-        }
-        else {
-          dispatch({
-            type: INFO_RESPONSE,
-            hasError: false,
-            error: null,
-            result: resp.body
-          })
-        }
-      })
+    if(moduleName) {
+      Request
+        .get(('/api/info/' + moduleName))
+        .end((err, resp) => {
+          if (err) {
+            dispatch({
+              type: INFO_RESPONSE,
+              hasError: true,
+              error: err,
+              result: null
+            })
+          }
+          else {
+            dispatch({
+              type: INFO_RESPONSE,
+              hasError: false,
+              error: null,
+              result: resp.body
+            })
+          }
+        })
+    } else {
+      dispatch(pushPath('/'))
     }
   }
 }
+
