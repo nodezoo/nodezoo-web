@@ -1,6 +1,7 @@
 'use strict'
 
 import React from 'react'
+import {connect} from 'react-redux'
 
 const Shell = React.createClass({
   render () {
@@ -14,4 +15,10 @@ const Shell = React.createClass({
   }
 })
 
-export default Shell
+
+function mapStatesToProps (state) {
+  return {
+  }
+}
+
+export default connect(mapStatesToProps)(Shell)
