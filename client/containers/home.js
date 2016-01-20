@@ -2,6 +2,7 @@
 
 import React from 'react'
 import {connect} from 'react-redux'
+import {search} from '../actions/search'
 
 export const Home = React.createClass({
   propTypes: {
@@ -18,6 +19,11 @@ export const Home = React.createClass({
 
   handleSearch (event) {
     event.preventDefault()
+
+    const {query} = this.refs
+    const {dispatch} = this.props
+
+    dispatch(search(query.value))
   },
 
   render () {
@@ -26,9 +32,9 @@ export const Home = React.createClass({
       <div className="home">
 
         <div className="row center-xs">
-          <form id="query-form" className="panel col-xs-12 col-sm-10 col-md-8 col-rg-6">
+          <form id="query-form" className="panel col-xs-12 col-sm-10 col-md-8 col-rg-6" onSubmit={this.handleSearch}>
             <fieldset>Search for <a href="http://nodejs.org">Node.js</a> modules</fieldset>
-            <input type="search" placeholder="Module name" id="query-term" className="input-large" />
+            <input ref="query" type="search" placeholder="Module name" id="query-term" className="input-large" />
             <button id="query-submit" type="submit" className="btn btn-large">Find modules</button>
           </form>
         </div>
