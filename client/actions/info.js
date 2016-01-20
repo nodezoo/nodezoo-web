@@ -3,12 +3,11 @@
 import Request from 'superagent/lib/client'
 import { pushPath } from 'redux-simple-router'
 
-export const INFO_REQUEST = 'INFO_REQUEST'
-export const INFO_RESPONSE = 'INFO_RESPONSE'
+import * as infoActions from '../constants/info'
 
 export function getInfo (moduleName) {
   return (dispatch) => {
-    dispatch({type: INFO_REQUEST})
+    dispatch({type: infoActions.INFO_REQUEST})
 
     if (!moduleName) {
       return dispatch(pushPath('/'))
@@ -19,7 +18,7 @@ export function getInfo (moduleName) {
       .end((err, resp) => {
         if (err) {
           dispatch({
-            type: INFO_RESPONSE,
+            type: infoActions.INFO_RESPONSE,
             hasError: true,
             error: err,
             result: null
@@ -27,7 +26,7 @@ export function getInfo (moduleName) {
         }
         else {
           dispatch({
-            type: INFO_RESPONSE,
+            type: infoActions.INFO_RESPONSE,
             hasError: false,
             error: null,
             result: resp.body

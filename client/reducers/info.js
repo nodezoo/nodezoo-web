@@ -1,9 +1,6 @@
 'use strict'
 
-import {
-  INFO_REQUEST,
-  INFO_RESPONSE
-} from '../actions/info'
+import * as infoActions from '../constants/info'
 
 const infoState = {
   isGettingInfo: false,
@@ -14,7 +11,7 @@ const infoState = {
 
 export default function info (state = infoState, action) {
   switch (action.type) {
-    case INFO_REQUEST:
+    case infoActions.INFO_REQUEST:
       return Object.assign({}, state, {
         isGettingInfo: true,
         hasError: false,
@@ -22,7 +19,7 @@ export default function info (state = infoState, action) {
         result: null
       })
 
-    case INFO_RESPONSE:
+    case infoActions.INFO_RESPONSE:
       return Object.assign({}, state, {
         isGettingInfo: false,
         hasError: action.hasError,

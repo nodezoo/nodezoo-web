@@ -1,9 +1,6 @@
 'use strict'
 
-import {
-  SEARCH_REQUEST,
-  SEARCH_RESPONSE
-} from '../actions/search'
+import * as searchActions from '../constants/search'
 
 const searchState = {
   isSearching: false,
@@ -14,7 +11,7 @@ const searchState = {
 
 export default function info (state = searchState, action) {
   switch (action.type) {
-    case SEARCH_REQUEST:
+    case searchActions.SEARCH_REQUEST:
       return Object.assign({}, state, {
         isSearching: true,
         hasError: false,
@@ -22,7 +19,7 @@ export default function info (state = searchState, action) {
         result: null
       })
 
-    case SEARCH_RESPONSE:
+    case searchActions.SEARCH_RESPONSE:
       return Object.assign({}, state, {
         isSearching: false,
         hasError: action.hasError,
