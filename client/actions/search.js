@@ -7,7 +7,7 @@ import * as searchActions from '../constants/search'
 
 export function search (query) {
   return (dispatch) => {
-    dispatch({type: searchActions.SEARCH_REQUEST})
+    dispatch({type: searchActions.SEARCH_REQUEST, query: query})
 
     Request
       .get('/api/query')
@@ -16,6 +16,7 @@ export function search (query) {
         if (err) {
           dispatch({
             type: searchActions.SEARCH_RESPONSE,
+            query: query,
             hasError: true,
             err: err,
             result: null
@@ -24,6 +25,7 @@ export function search (query) {
         else {
           dispatch({
             type: searchActions.SEARCH_RESPONSE,
+            query: query,
             hasError: false,
             err: null,
             result: resp.body.items
