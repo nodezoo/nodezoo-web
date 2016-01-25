@@ -1,0 +1,2 @@
+export const INFO_REQUEST = 'INFO_REQUEST'
+export const INFO_RESPONSE = 'INFO_RESPONSE'

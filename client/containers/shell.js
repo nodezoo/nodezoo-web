@@ -2,6 +2,8 @@
 
 import React from 'react'
 import {connect} from 'react-redux'
+import {Header} from '../components/header'
+import {Footer} from '../components/footer'
 
 const Shell = React.createClass({
   render () {
@@ -9,7 +11,9 @@ const Shell = React.createClass({
 
     return (
       <div className="shell">
+        <Header />
         {children}
+        <Footer />
       </div>
     )
   }
