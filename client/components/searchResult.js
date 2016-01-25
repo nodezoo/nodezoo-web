@@ -4,15 +4,17 @@ import React from 'react'
 
 export const SearchResult = React.createClass({
   render () {
+    const item = this.props.data
+    const infoUrl = `/info/${item.name}`
     return (
-      <div key={this.props.data.id} id="query-results-container" className="panel col-xs-12 col-sm-10 col-md-8 col-rg-6">
+      <div id="query-results-container" className="panel col-xs-12 col-sm-10 col-md-8 col-rg-6">
         <div id="query-result" className="tm result txt-left module-result">
           <div className="module-rank"></div>
           <div className="module-details">
             <span className="icon icon-hex-4"></span>
             <div className="cf">
               <h3 className="m0 fl-left">
-                <a className="module-site" target="_blank" href="/info/seneca">seneca</a>
+                <a className="module-site" target="_blank" href={infoUrl}>{item.name}</a>
               </h3>
 
               <div className="fl-right module-sources">

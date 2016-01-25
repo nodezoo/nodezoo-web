@@ -57,7 +57,7 @@ export const Home = React.createClass({
     }
     else {
       body = items.map((item) => {
-        return <SearchResult data={item} />
+        return <SearchResult key={item.id} data={item} />
       })
     }
 
