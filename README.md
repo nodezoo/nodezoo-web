@@ -2,7 +2,7 @@
 
 # nodezoo-web
 Nodezoo Web is the frontend client and server for the Nodezoo search engine. Nodezoo is an example microservice system written in node.js. It is written in a workshop format and designed to help you explore a full microservice
-system. Please see the [main repo]() for more details
+system. Please see the [main repo][] for more details
 
 - __Sponsor:__ [nearForm][]
 
@@ -26,3 +26,4 @@ Licensed under [MIT][].
 [Code of Conduct]: https://github.com/nearform/vidi-contrib/docs/code_of_conduct.md
 [nearForm]: http://www.nearform.com/
 [NodeZoo]: http://www.nodezoo.com/
+[main repo]: https://github.com/rjrodger/nodezoo
