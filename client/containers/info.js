@@ -20,26 +20,10 @@ export const Info = React.createClass({
     const moduleName = this.props.params.moduleName
     let body = null
 
-    if (!this.props.result) {
-      body = (
-        <div className="alert alert-info alert-has-icon txt-left">
-          <span className="icon icon-refresh-blue"></span>
-          <p className="m0">Loading information. Please refresh the page.</p>
-        </div>
-      )
-    }
-    else {
+    if (this.props.result) {
       const {no_github, github, no_npm, npm} = this.props.result
 
       body = (
-        <div className="col-xs-12 col-sm-8 col-md-8 col-rg-6">
-          <div className="module-header cf">
-            <div className="row middle-xs">
-              <h1 className="col-xs-12 col-sm-7 m0">{moduleName}</h1>
-              <a href="/" className="col-xs-12 col-sm-5">← Back to search results</a>
-            </div>
-          </div>
-
           <div className="panel panel-module-info txt-left">
             {(() => {
               if (!no_npm) {
@@ -52,6 +36,8 @@ export const Info = React.createClass({
                     </ul>
                   </div>
                 )
+              } else {
+                //this.props.dispatch(getInfo(moduleName))
               }
             })()}
 
@@ -69,9 +55,10 @@ export const Info = React.createClass({
                     </ul>
                   </div>
                 )
+              } else {
+                this.props.dispatch(getInfo(moduleName))
               }
             })()}
-          </div>
         </div>
       )
     }
@@ -79,7 +66,16 @@ export const Info = React.createClass({
     return (
       <div className="info">
         <div className="row center-xs">
-          {body}
+          <div className="col-xs-12 col-sm-8 col-md-8 col-rg-6">
+            <div className="module-header cf">
+              <div className="row middle-xs">
+                <h1 className="col-xs-12 col-sm-7 m0">{moduleName}</h1>
+                <a href="/" className="col-xs-12 col-sm-5">← Back to search results</a>
+              </div>
+            </div>
+
+            {body}
+          </div>
         </div>
       </div>
     )

@@ -21,8 +21,8 @@ module.exports = [
     method: 'GET',
     path: '/api/info/{name}',
     handler: function (request, reply) {
-      var pattern = {role: 'info', cmd: 'get'}
-      var payload = {name: request.params.name}
+      var pattern = {role: 'info', cmd: 'get', name: request.params.name}
+      var payload = {}
 
       request.seneca.act(pattern, payload, function (err, data) {
         if (err) return reply(Boom.internal(err))

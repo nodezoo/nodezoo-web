@@ -59,16 +59,12 @@ server.register(plugins, function (err) {
   // meshify, no need for ports
   seneca.use('mesh', {auto: true})
 
-  // Capture metrics for each pinned pattern.
-  seneca.use('msgstats', {
-    udp: {host: STATS},
-    pins: ['role:info,cmd:get', 'role:search,cmd:search']
-  })
-
   // Once seneca is ready we start our server
   seneca.ready(function () {
-    seneca.log.info('hapi', server.info)
-    
-    server.start(endIfErr)
+    setTimeout(function () {
+      seneca.log.info('hapi', server.info)
+
+      server.start(endIfErr)
+    }, 3000)
   })
 })

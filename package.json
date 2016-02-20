@@ -43,11 +43,11 @@
     "redux-logger": "2.3.x",
     "redux-simple-router": "1.0.x",
     "redux-thunk": "1.0.x",
-    "seneca-msgstats": "https://github.com/rjrodger/seneca-msgstats",
-    "seneca-mesh": "https://github.com/rjrodger/seneca-mesh",
-    "seneca-balance-client": "https://github.com/rjrodger/seneca-balance-client",
+    "seneca-balance-client": "^0.2.0",
+    "seneca-mesh": "^0.5.0",
     "style-loader": "0.13.x",
     "superagent": "1.6.x",
+    "toolbag": "^0.9.0",
     "webpack": "1.12.x"
   },
   "devDependencies": {
