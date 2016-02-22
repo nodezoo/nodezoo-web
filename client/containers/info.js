@@ -36,8 +36,6 @@ export const Info = React.createClass({
                     </ul>
                   </div>
                 )
-              } else {
-                //this.props.dispatch(getInfo(moduleName))
               }
             })()}
 
@@ -55,12 +53,16 @@ export const Info = React.createClass({
                     </ul>
                   </div>
                 )
-              } else {
-                this.props.dispatch(getInfo(moduleName))
               }
             })()}
         </div>
       )
+
+      if (no_github || no_npm) {
+        setTimeout(() => {
+          this.props.dispatch(getInfo(moduleName))
+        }, 3000)
+      }
     }
 
     return (
