@@ -1,7 +1,6 @@
 'use strict'
 
 var HOST = process.env.HOST || 'localhost'
-var STATS = process.env.STATS || 'localhost'
 var PORT = process.env.PORT || 8000
 
 // Our hapi server bits
