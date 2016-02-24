@@ -43,7 +43,7 @@
     "superagent": "1.6.x",
     "toolbag": "0.9.0",
     "vidi-metrics": "0.1.0",
-    "vidi-seneca-metrics": "vidi/insights/vidi-seneca-metrics#nopin"
+    "vidi-seneca-metrics": "vidi-insights/vidi-seneca-metrics#nopin"
   },
   "devDependencies": {
     "babel-core": "6.4.x",
