@@ -20,6 +20,7 @@ export const SearchResult = React.createClass({
               <div className="fl-right module-sources">
                 <a className="logo logo-npm logo-npm-large" target="_blank"></a>
                 <a className="logo logo-git logo-git-large" target="_blank"></a>
+                <a className="logo logo-travis logo-travis-large" target="_blank"></a>
               </div>
             </div>
 

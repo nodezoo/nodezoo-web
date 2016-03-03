@@ -21,7 +21,7 @@ export const Info = React.createClass({
     let body = null
 
     if (this.props.result) {
-      const {no_github, github, no_npm, npm} = this.props.result
+      const {no_github, github, no_npm, npm, no_travis, travis} = this.props.result
 
       body = (
           <div className="panel panel-module-info txt-left">
@@ -38,6 +38,8 @@ export const Info = React.createClass({
                 )
               }
             })()}
+            
+            
 
             {(() => {
               if (!no_github) {
@@ -55,10 +57,27 @@ export const Info = React.createClass({
                 )
               }
             })()}
+            
+            {(() => {
+              if (!no_travis) {
+                return (
+                  <div className="panel-module">
+                    <h2 className="mt0"><span className="logo logo-travis"></span> Travis-Ci</h2>
+                    <ul className="list-unstyled cf module-info-list">
+                      <li><strong className="module-info-heading">Travis ID:</strong> {travis.id}</li>
+                      <li><strong className="module-info-heading">Group:</strong> {travis.group}</li>
+                      <li><strong className="module-info-heading">Description:</strong> {travis.description}</li>
+                      <li><strong className="module-info-heading">Last build:</strong> {travis.last_build_state}</li>
+                      <li><strong className="module-info-heading">Last build at:</strong> {travis.last_build_started_at}</li>
+                    </ul>
+                  </div>
+                )
+              }
+            })()}
         </div>
       )
 
-      if (no_github || no_npm) {
+      if (no_github || no_npm || no_travis) {
         setTimeout(() => {
           this.props.dispatch(getInfo(moduleName))
         }, 3000)
