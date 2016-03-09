@@ -22,24 +22,25 @@ export const Info = React.createClass({
 
     if (this.props.result) {
       const {no_github, github, no_npm, npm, no_travis, travis} = this.props.result
-
       body = (
           <div className="panel panel-module-info txt-left">
             {(() => {
-              if (!no_npm) {
+              if(!no_npm) {
+              var arr = [npm.desc,npm.version]
+               var verified = verify(arr);
                 return (
                   <div className="panel-module">
                     <h2 className="mt0"><span className="logo logo-npm"></span> npm</h2>
                     <ul className="list-unstyled cf module-info-list">
-                      <li><strong className="module-info-heading">Tagline:</strong> {npm.desc}</li>
-                      <li><strong className="module-info-heading">Version:</strong> {npm.version}</li>
+                      <li><strong className="module-info-heading">Tagline:</strong> {verified[0]}</li>
+                      <li><strong className="module-info-heading">Version:</strong> {verified[1]}</li>
                     </ul>
                   </div>
                 )
               }
             })()}
-
-
+            
+            
 
             {(() => {
               if (!no_github) {
@@ -51,32 +52,36 @@ export const Info = React.createClass({
                     npm.giturl = 'http://' + npm.giturl.slice(6)
                   }
                 }
+                var arr = [github.last,npm.giturl,github.watches,github.forks,github.stars]
+                 var verified = verify(arr);
                 return (
                   <div className="panel-module">
                     <h2 className="mt0"><span className="logo logo-git"></span> Github</h2>
                     <ul className="list-unstyled module-info-list cf">
-                      <li><strong className="module-info-heading">Created:</strong> {github.last}</li>
-                      <li><strong className="module-info-heading">URL:</strong><a href={npm.giturl}> {npm.giturl}</a></li>
-                      <li><strong className="module-info-heading">Watches:</strong> {github.watches}</li>
-                      <li><strong className="module-info-heading">Forks:</strong> {github.forks}</li>
-                      <li><strong className="module-info-heading">Stars:</strong> {github.stars}</li>
+                      <li><strong className="module-info-heading">Created:</strong> {verified[0]}</li>
+                      <li><strong className="module-info-heading">URL:</strong><a href={npm.giturl}> {verified[1]}</a></li>
+                      <li><strong className="module-info-heading">Watches:</strong> {verified[2]}</li>
+                      <li><strong className="module-info-heading">Forks:</strong> {verified[3]}</li>
+                      <li><strong className="module-info-heading">Stars:</strong> {verified[4]}</li>
                     </ul>
                   </div>
                 )
               }
             })()}
-
+            
             {(() => {
               if (!no_travis) {
+                var arr = [travis.id,travis.group,travis.description,travis.last_build_state,travis.last_build_started_at]
+                 var verified = verify(arr);
                 return (
                   <div className="panel-module">
                     <h2 className="mt0"><span className="logo logo-travis"></span> Travis-Ci</h2>
                     <ul className="list-unstyled cf module-info-list">
-                      <li><strong className="module-info-heading">Travis ID:</strong> {travis.id}</li>
-                      <li><strong className="module-info-heading">Group:</strong> {travis.group}</li>
-                      <li><strong className="module-info-heading">Description:</strong> {travis.description}</li>
-                      <li><strong className="module-info-heading">Last build:</strong> {travis.last_build_state}</li>
-                      <li><strong className="module-info-heading">Last build at:</strong> {travis.last_build_started_at}</li>
+                      <li><strong className="module-info-heading">Travis ID:</strong> {verified[0]}</li>
+                      <li><strong className="module-info-heading">Group:</strong> {verified[1]}</li>
+                      <li><strong className="module-info-heading">Description:</strong> {verified[2]}</li>
+                      <li><strong className="module-info-heading">Last build:</strong> {verified[3]}</li>
+                      <li><strong className="module-info-heading">Last build at:</strong> {verified[4]}</li>
                     </ul>
                   </div>
                 )
@@ -110,6 +115,15 @@ export const Info = React.createClass({
     )
   }
 })
+
+function verify(data){
+  for(var field in data){
+    if(!data[field]){
+      data[field] = "no data available"
+    }
+  }
+  return data;
+}
 
 function mapStatesToProps (state) {
 
