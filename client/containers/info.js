@@ -44,22 +44,14 @@ export const Info = React.createClass({
 
             {(() => {
               if (!no_github) {
-                if(npm){
-                  if(npm.giturl.indexOf('git+') >= 0){
-                    npm.giturl = npm.giturl.slice(4)
-                  }
-                  else if(npm.giturl.indexOf('git://') >= 0){
-                    npm.giturl = 'http://' + npm.giturl.slice(6)
-                  }
-                }
-                var arr = [github.last,npm.giturl,github.watches,github.forks,github.stars]
+                var arr = [github.last,github.url,github.watches,github.forks,github.stars]
                  var verified = verify(arr);
                 return (
                   <div className="panel-module">
                     <h2 className="mt0"><span className="logo logo-git"></span> Github</h2>
                     <ul className="list-unstyled module-info-list cf">
                       <li><strong className="module-info-heading">Created:</strong> {verified[0]}</li>
-                      <li><strong className="module-info-heading">URL:</strong><a href={npm.giturl}> {verified[1]}</a></li>
+                      <li><strong className="module-info-heading">URL:</strong><a href={github.url}> {verified[1]}</a></li>
                       <li><strong className="module-info-heading">Watches:</strong> {verified[2]}</li>
                       <li><strong className="module-info-heading">Forks:</strong> {verified[3]}</li>
                       <li><strong className="module-info-heading">Stars:</strong> {verified[4]}</li>
