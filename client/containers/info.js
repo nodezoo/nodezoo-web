@@ -38,17 +38,25 @@ export const Info = React.createClass({
                 )
               }
             })()}
-            
-            
+
+
 
             {(() => {
               if (!no_github) {
+                if(npm){
+                  if(npm.giturl.indexOf('git+') >= 0){
+                    npm.giturl = npm.giturl.slice(4)
+                  }
+                  else if(npm.giturl.indexOf('git://') >= 0){
+                    npm.giturl = 'http://' + npm.giturl.slice(6)
+                  }
+                }
                 return (
                   <div className="panel-module">
                     <h2 className="mt0"><span className="logo logo-git"></span> Github</h2>
                     <ul className="list-unstyled module-info-list cf">
                       <li><strong className="module-info-heading">Created:</strong> {github.last}</li>
-                      <li><strong className="module-info-heading">URL:</strong><a href="#"> {npm.giturl}</a></li>
+                      <li><strong className="module-info-heading">URL:</strong><a href={npm.giturl}> {npm.giturl}</a></li>
                       <li><strong className="module-info-heading">Watches:</strong> {github.watches}</li>
                       <li><strong className="module-info-heading">Forks:</strong> {github.forks}</li>
                       <li><strong className="module-info-heading">Stars:</strong> {github.stars}</li>
@@ -57,7 +65,7 @@ export const Info = React.createClass({
                 )
               }
             })()}
-            
+
             {(() => {
               if (!no_travis) {
                 return (
