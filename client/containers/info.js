@@ -31,16 +31,24 @@ export const Info = React.createClass({
                 return (
                   <div className="panel-module">
                     <h2 className="mt0"><span className="logo logo-npm"></span> npm</h2>
-                    <ul className="list-unstyled cf module-info-list">
-                      <li><strong className="module-info-heading">Tagline:</strong> {verified[0]}</li>
-                      <li><strong className="module-info-heading">Version:</strong> {verified[1]}</li>
-                    </ul>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <th className="npmTableHead"><strong>Tagline:</strong></th>
+                          <td className="tableInfo">{verified[0]}</td>
+                        </tr>
+                        <tr>
+                          <th className="npmTableHead"><strong>Version:</strong></th>
+                          <td className="tableInfo">{verified[1]}</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 )
               }
             })()}
-            
-            
+
+
 
             {(() => {
               if (!no_github) {
@@ -49,18 +57,35 @@ export const Info = React.createClass({
                 return (
                   <div className="panel-module">
                     <h2 className="mt0"><span className="logo logo-git"></span> Github</h2>
-                    <ul className="list-unstyled module-info-list cf">
-                      <li><strong className="module-info-heading">Created:</strong> {verified[0]}</li>
-                      <li><strong className="module-info-heading">URL:</strong><a href={github.url}> {verified[1]}</a></li>
-                      <li><strong className="module-info-heading">Watches:</strong> {verified[2]}</li>
-                      <li><strong className="module-info-heading">Forks:</strong> {verified[3]}</li>
-                      <li><strong className="module-info-heading">Stars:</strong> {verified[4]}</li>
-                    </ul>
+                      <table>
+                        <tbody>
+                          <tr>
+                            <th className="gitTableHead"><strong>Created:</strong></th>
+                            <td className="tableInfo">{verified[0]}</td>
+                          </tr>
+                          <tr>
+                            <th className="gitTableHead"><strong>URL:</strong></th>
+                            <td className="tableInfo"><a href={github.url}> {verified[1]}</a></td>
+                          </tr>
+                          <tr>
+                            <th className="gitTableHead"><strong>Watches:</strong></th>
+                            <td className="tableInfo">{verified[2]}</td>
+                          </tr>
+                          <tr>
+                            <th className="gitTableHead"><strong>Forks:</strong></th>
+                            <td className="tableInfo">{verified[3]} <span className="icon icon-fork"></span></td>
+                          </tr>
+                          <tr>
+                            <th className="gitTableHead"><strong>Stars:</strong></th>
+                            <td className="tableInfo">{verified[4]} <span className="icon icon-star"></span></td>
+                          </tr>
+                        </tbody>
+                      </table>
                   </div>
                 )
               }
             })()}
-            
+
             {(() => {
               if (!no_travis) {
                 var arr = [travis.id,travis.group,travis.description,travis.last_build_state,travis.last_build_started_at]
@@ -68,13 +93,30 @@ export const Info = React.createClass({
                 return (
                   <div className="panel-module">
                     <h2 className="mt0"><span className="logo logo-travis"></span> Travis-Ci</h2>
-                    <ul className="list-unstyled cf module-info-list">
-                      <li><strong className="module-info-heading">Travis ID:</strong> {verified[0]}</li>
-                      <li><strong className="module-info-heading">Group:</strong> {verified[1]}</li>
-                      <li><strong className="module-info-heading">Description:</strong> {verified[2]}</li>
-                      <li><strong className="module-info-heading">Last build:</strong> {verified[3]}</li>
-                      <li><strong className="module-info-heading">Last build at:</strong> {verified[4]}</li>
-                    </ul>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <th className="travisTableHead"><strong>Travis ID:</strong></th>
+                          <td className="tableInfo">{verified[0]}</td>
+                        </tr>
+                        <tr>
+                          <th className="travisTableHead"><strong>Group:</strong></th>
+                          <td className="tableInfo">{verified[1]}</td>
+                        </tr>
+                        <tr>
+                          <th className="travisTableHead"><strong>Description:</strong></th>
+                          <td className="tableInfo">{verified[2]}</td>
+                        </tr>
+                        <tr>
+                          <th className="travisTableHead"><strong>Last build:</strong></th>
+                          <td className="tableInfo">{verified[3]}</td>
+                        </tr>
+                        <tr>
+                          <th className="travisTableHead"><strong>Last built:</strong></th>
+                          <td className="tableInfo">{verified[4]}</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 )
               }
