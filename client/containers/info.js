@@ -22,54 +22,108 @@ export const Info = React.createClass({
 
     if (this.props.result) {
       const {no_github, github, no_npm, npm, no_travis, travis} = this.props.result
-
       body = (
           <div className="panel panel-module-info txt-left">
             {(() => {
-              if (!no_npm) {
+              if(!no_npm) {
+              var arr = [npm.desc,npm.version]
+               var verified = verify(arr);
                 return (
                   <div className="panel-module">
                     <h2 className="mt0"><span className="logo logo-npm"></span> npm</h2>
-                    <ul className="list-unstyled cf module-info-list">
-                      <li><strong className="module-info-heading">Tagline:</strong> {npm.desc}</li>
-                      <li><strong className="module-info-heading">Version:</strong> {npm.version}</li>
-                    </ul>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <th className="npmTableHead"><strong>Tagline:</strong></th>
+                          <td className="tableInfo">{verified[0]}</td>
+                        </tr>
+                        <tr>
+                          <th className="npmTableHead"><strong>Version:</strong></th>
+                          <td className="tableInfo">{verified[1]}</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 )
               }
             })()}
-            
-            
+
+
 
             {(() => {
               if (!no_github) {
+                var arr = [github.last,github.url,github.watches,github.forks,github.stars]
+                 var verified = verify(arr);
                 return (
                   <div className="panel-module">
                     <h2 className="mt0"><span className="logo logo-git"></span> Github</h2>
-                    <ul className="list-unstyled module-info-list cf">
-                      <li><strong className="module-info-heading">Created:</strong> {github.last}</li>
-                      <li><strong className="module-info-heading">URL:</strong><a href="#"> {npm.giturl}</a></li>
-                      <li><strong className="module-info-heading">Watches:</strong> {github.watches}</li>
-                      <li><strong className="module-info-heading">Forks:</strong> {github.forks}</li>
-                      <li><strong className="module-info-heading">Stars:</strong> {github.stars}</li>
-                    </ul>
+                      <table>
+                        <tbody>
+                          <tr>
+                            <th className="gitTableHead"><strong>Created:</strong></th>
+                            <td className="tableInfo">{verified[0]}</td>
+                          </tr>
+                          <tr>
+                            <th className="gitTableHead"><strong>URL:</strong></th>
+                            <td className="tableInfo"><a href={github.url}> {verified[1]}</a></td>
+                          </tr>
+                          <tr>
+                            <th className="gitTableHead"><strong>Watches:</strong></th>
+                            <td className="tableInfo">{verified[2]} <span className="icon icon-watch-sm"></span></td>
+                          </tr>
+                          <tr>
+                            <th className="gitTableHead"><strong>Forks:</strong></th>
+                            <td className="tableInfo">{verified[3]} <span className="icon icon-fork-sm"></span></td>
+                          </tr>
+                          <tr>
+                            <th className="gitTableHead"><strong>Stars:</strong></th>
+                            <td className="tableInfo">{verified[4]} <span className="icon icon-star-sm"></span></td>
+                          </tr>
+                        </tbody>
+                      </table>
                   </div>
                 )
               }
             })()}
-            
+
             {(() => {
               if (!no_travis) {
+                var arr = [travis.id,travis.group,travis.description,travis.last_build_state,travis.last_build_started_at]
+                 var verified = verify(arr);
+                 var state
+                 if(verified[3] == "passed"){
+                     state = "icon icon-tick"
+                  } else if (verified[3] == "failed") {
+                      state = "icon icon-x"
+                    }
+                 else {state = ""}
                 return (
                   <div className="panel-module">
                     <h2 className="mt0"><span className="logo logo-travis"></span> Travis-Ci</h2>
-                    <ul className="list-unstyled cf module-info-list">
-                      <li><strong className="module-info-heading">Travis ID:</strong> {travis.id}</li>
-                      <li><strong className="module-info-heading">Group:</strong> {travis.group}</li>
-                      <li><strong className="module-info-heading">Description:</strong> {travis.description}</li>
-                      <li><strong className="module-info-heading">Last build:</strong> {travis.last_build_state}</li>
-                      <li><strong className="module-info-heading">Last build at:</strong> {travis.last_build_started_at}</li>
-                    </ul>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <th className="travisTableHead"><strong>Travis ID:</strong></th>
+                          <td className="tableInfo">{verified[0]}</td>
+                        </tr>
+                        <tr>
+                          <th className="travisTableHead"><strong>Group:</strong></th>
+                          <td className="tableInfo">{verified[1]}</td>
+                        </tr>
+                        <tr>
+                          <th className="travisTableHead"><strong>Description:</strong></th>
+                          <td className="tableInfo">{verified[2]}</td>
+                        </tr>
+                        <tr>
+                          <th className="travisTableHead"><strong>Last build:</strong></th>
+                          <td className="tableInfo">{verified[3]} <span className={state}></span></td>
+                        </tr>
+                        <tr>
+                          <th className="travisTableHead"><strong>Last built:</strong></th>
+                          <td className="tableInfo">{verified[4]}</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 )
               }
@@ -102,6 +156,15 @@ export const Info = React.createClass({
     )
   }
 })
+
+function verify(data){
+  for(var field in data){
+    if(!data[field]){
+      data[field] = "no data available"
+    }
+  }
+  return data;
+}
 
 function mapStatesToProps (state) {
 
