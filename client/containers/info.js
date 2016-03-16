@@ -69,15 +69,15 @@ export const Info = React.createClass({
                           </tr>
                           <tr>
                             <th className="gitTableHead"><strong>Watches:</strong></th>
-                            <td className="tableInfo">{verified[2]}</td>
+                            <td className="tableInfo">{verified[2]} <span className="icon icon-watch-sm"></span></td>
                           </tr>
                           <tr>
                             <th className="gitTableHead"><strong>Forks:</strong></th>
-                            <td className="tableInfo">{verified[3]} <span className="icon icon-fork"></span></td>
+                            <td className="tableInfo">{verified[3]} <span className="icon icon-fork-sm"></span></td>
                           </tr>
                           <tr>
                             <th className="gitTableHead"><strong>Stars:</strong></th>
-                            <td className="tableInfo">{verified[4]} <span className="icon icon-star"></span></td>
+                            <td className="tableInfo">{verified[4]} <span className="icon icon-star-sm"></span></td>
                           </tr>
                         </tbody>
                       </table>
@@ -90,6 +90,13 @@ export const Info = React.createClass({
               if (!no_travis) {
                 var arr = [travis.id,travis.group,travis.description,travis.last_build_state,travis.last_build_started_at]
                  var verified = verify(arr);
+                 var state
+                 if(verified[3] == "passed"){
+                     state = "icon icon-tick"
+                  } else if (verified[3] == "failed") {
+                      state = "icon icon-x"
+                    }
+                 else {state = ""}
                 return (
                   <div className="panel-module">
                     <h2 className="mt0"><span className="logo logo-travis"></span> Travis-Ci</h2>
@@ -109,7 +116,7 @@ export const Info = React.createClass({
                         </tr>
                         <tr>
                           <th className="travisTableHead"><strong>Last build:</strong></th>
-                          <td className="tableInfo">{verified[3]}</td>
+                          <td className="tableInfo">{verified[3]} <span className={state}></span></td>
                         </tr>
                         <tr>
                           <th className="travisTableHead"><strong>Last built:</strong></th>
