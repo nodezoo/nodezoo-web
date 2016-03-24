@@ -3,6 +3,10 @@
 import React from 'react'
 
 export const GitInfo = React.createClass({
+  propTypes: {
+    npm: React.PropTypes.object.isRequired,
+    github: React.PropTypes.object.isRequired
+  },
   render () {
     return (
       <div className="panel-module">
