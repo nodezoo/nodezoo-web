@@ -3,6 +3,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {getInfo} from '../actions/info'
+import {GitInfo} from '../components/gitInfo'
 
 export const Info = React.createClass({
   propTypes: {
@@ -19,6 +20,7 @@ export const Info = React.createClass({
   render () {
     const moduleName = this.props.params.moduleName
     let body = null
+    console.log(this.props.result, 'result')
 
     if (this.props.result) {
       const {no_github, github, no_npm, npm, no_travis, travis} = this.props.result
@@ -43,18 +45,7 @@ export const Info = React.createClass({
 
             {(() => {
               if (!no_github) {
-                return (
-                  <div className="panel-module">
-                    <h2 className="mt0"><span className="logo logo-git"></span> Github</h2>
-                    <ul className="list-unstyled module-info-list cf">
-                      <li><strong className="module-info-heading">Created:</strong> {github.last}</li>
-                      <li><strong className="module-info-heading">URL:</strong><a href="#"> {npm.giturl}</a></li>
-                      <li><strong className="module-info-heading">Watches:</strong> {github.watches}</li>
-                      <li><strong className="module-info-heading">Forks:</strong> {github.forks}</li>
-                      <li><strong className="module-info-heading">Stars:</strong> {github.stars}</li>
-                    </ul>
-                  </div>
-                )
+                 return <GitInfo github={github}  npm={npm} />
               }
             })()}
             
