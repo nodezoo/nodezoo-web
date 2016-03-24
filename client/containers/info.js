@@ -4,6 +4,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {getInfo} from '../actions/info'
 import {GitInfo} from '../components/gitInfo'
+import {NpmInfo} from '../components/npmInfo'
 
 export const Info = React.createClass({
   propTypes: {
@@ -29,15 +30,7 @@ export const Info = React.createClass({
           <div className="panel panel-module-info txt-left">
             {(() => {
               if (!no_npm) {
-                return (
-                  <div className="panel-module">
-                    <h2 className="mt0"><span className="logo logo-npm"></span> npm</h2>
-                    <ul className="list-unstyled cf module-info-list">
-                      <li><strong className="module-info-heading">Tagline:</strong> {npm.desc}</li>
-                      <li><strong className="module-info-heading">Version:</strong> {npm.version}</li>
-                    </ul>
-                  </div>
-                )
+                return <NpmInfo npm={npm} />
               }
             })()}
             
