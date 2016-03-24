@@ -5,6 +5,7 @@ import {connect} from 'react-redux'
 import {getInfo} from '../actions/info'
 import {GitInfo} from '../components/gitInfo'
 import {NpmInfo} from '../components/npmInfo'
+import {TravisInfo} from '../components/TravisInfo'
 
 export const Info = React.createClass({
   propTypes: {
@@ -44,18 +45,7 @@ export const Info = React.createClass({
             
             {(() => {
               if (!no_travis) {
-                return (
-                  <div className="panel-module">
-                    <h2 className="mt0"><span className="logo logo-travis"></span> Travis-Ci</h2>
-                    <ul className="list-unstyled cf module-info-list">
-                      <li><strong className="module-info-heading">Travis ID:</strong> {travis.id}</li>
-                      <li><strong className="module-info-heading">Group:</strong> {travis.group}</li>
-                      <li><strong className="module-info-heading">Description:</strong> {travis.description}</li>
-                      <li><strong className="module-info-heading">Last build:</strong> {travis.last_build_state}</li>
-                      <li><strong className="module-info-heading">Last build at:</strong> {travis.last_build_started_at}</li>
-                    </ul>
-                  </div>
-                )
+                return <TravisInfo travis={travis} />
               }
             })()}
         </div>
