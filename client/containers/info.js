@@ -19,6 +19,10 @@ export const Info = React.createClass({
     dispatch(getInfo(moduleName))
   },
 
+  shouldComponentUpdate () {
+    return !this.props.result
+  },
+
   render () {
     const moduleName = this.props.params.moduleName
     let body = null
