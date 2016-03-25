@@ -3,6 +3,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {getInfo} from '../actions/info'
+import {GitInfo} from '../components/gitInfo'
+import {NpmInfo} from '../components/npmInfo'
+import {TravisInfo} from '../components/TravisInfo'
 
 export const Info = React.createClass({
   propTypes: {
@@ -16,9 +19,14 @@ export const Info = React.createClass({
     dispatch(getInfo(moduleName))
   },
 
+  shouldComponentUpdate () {
+    return !this.props.result
+  },
+
   render () {
     const moduleName = this.props.params.moduleName
     let body = null
+    console.log(this.props.result, 'result')
 
     if (this.props.result) {
       const {no_github, github, no_npm, npm, no_travis, travis} = this.props.result
@@ -27,15 +35,7 @@ export const Info = React.createClass({
           <div className="panel panel-module-info txt-left">
             {(() => {
               if (!no_npm) {
-                return (
-                  <div className="panel-module">
-                    <h2 className="mt0"><span className="logo logo-npm"></span> npm</h2>
-                    <ul className="list-unstyled cf module-info-list">
-                      <li><strong className="module-info-heading">Tagline:</strong> {npm.desc}</li>
-                      <li><strong className="module-info-heading">Version:</strong> {npm.version}</li>
-                    </ul>
-                  </div>
-                )
+                return <NpmInfo npm={npm} />
               }
             })()}
             
@@ -43,35 +43,13 @@ export const Info = React.createClass({
 
             {(() => {
               if (!no_github) {
-                return (
-                  <div className="panel-module">
-                    <h2 className="mt0"><span className="logo logo-git"></span> Github</h2>
-                    <ul className="list-unstyled module-info-list cf">
-                      <li><strong className="module-info-heading">Created:</strong> {github.last}</li>
-                      <li><strong className="module-info-heading">URL:</strong><a href="#"> {npm.giturl}</a></li>
-                      <li><strong className="module-info-heading">Watches:</strong> {github.watches}</li>
-                      <li><strong className="module-info-heading">Forks:</strong> {github.forks}</li>
-                      <li><strong className="module-info-heading">Stars:</strong> {github.stars}</li>
-                    </ul>
-                  </div>
-                )
+                 return <GitInfo github={github}  npm={npm} />
               }
             })()}
             
             {(() => {
               if (!no_travis) {
-                return (
-                  <div className="panel-module">
-                    <h2 className="mt0"><span className="logo logo-travis"></span> Travis-Ci</h2>
-                    <ul className="list-unstyled cf module-info-list">
-                      <li><strong className="module-info-heading">Travis ID:</strong> {travis.id}</li>
-                      <li><strong className="module-info-heading">Group:</strong> {travis.group}</li>
-                      <li><strong className="module-info-heading">Description:</strong> {travis.description}</li>
-                      <li><strong className="module-info-heading">Last build:</strong> {travis.last_build_state}</li>
-                      <li><strong className="module-info-heading">Last build at:</strong> {travis.last_build_started_at}</li>
-                    </ul>
-                  </div>
-                )
+                return <TravisInfo travis={travis} />
               }
             })()}
         </div>
