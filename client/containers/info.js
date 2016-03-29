@@ -26,32 +26,29 @@ export const Info = React.createClass({
   render () {
     const moduleName = this.props.params.moduleName
     let body = null
-    console.log(this.props.result, 'result')
 
     if (this.props.result) {
       const {no_github, github, no_npm, npm, no_travis, travis} = this.props.result
 
       body = (
-          <div className="panel panel-module-info txt-left">
-            {(() => {
-              if (!no_npm) {
-                return <NpmInfo npm={npm} />
+        <div className="panel panel-module-info txt-left">
+          {(() => {
+            if (!no_npm) {
+              return <NpmInfo npm={npm} />
               }
-            })()}
-            
-            
+          })()}
 
-            {(() => {
-              if (!no_github) {
-                 return <GitInfo github={github}  npm={npm} />
-              }
-            })()}
-            
-            {(() => {
-              if (!no_travis) {
-                return <TravisInfo travis={travis} />
-              }
-            })()}
+          {(() => {
+            if (!no_github) {
+              return <GitInfo github={github} />
+            }
+          })()}
+
+          {(() => {
+            if (!no_travis) {
+              return <TravisInfo travis={travis} />
+            }
+          })()}
         </div>
       )
 
@@ -72,7 +69,6 @@ export const Info = React.createClass({
                 <a href="/" className="col-xs-12 col-sm-5">← Back to search results</a>
               </div>
             </div>
-
             {body}
           </div>
         </div>
@@ -82,7 +78,6 @@ export const Info = React.createClass({
 })
 
 function mapStatesToProps (state) {
-
   return {
     result: state.info.result
   }
