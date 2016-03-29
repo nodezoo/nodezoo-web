@@ -30,7 +30,7 @@ module.exports = [
         data.no_npm = !data.npm
         data.no_github = !data.github
         data.no_travis = !data.travis
-        
+
 
         return reply(data)
       })

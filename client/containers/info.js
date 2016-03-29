@@ -35,7 +35,7 @@ export const Info = React.createClass({
           {(() => {
             if (!no_npm) {
               return <NpmInfo npm={npm} />
-              }
+            }
           })()}
 
           {(() => {

@@ -10,6 +10,6 @@ export default function createRootReducer () {
   return combineReducers({
     routing: routeReducer,
     search: searchReducer,
-    info: infoReducer,
+    info: infoReducer
   })
 }

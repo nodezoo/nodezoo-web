@@ -28,8 +28,7 @@ export const Home = React.createClass({
   },
 
   render () {
-
-    /*var List = React.createClass({
+    /* var List = React.createClass({
       render: function() {
         return (<div>
           { this.props.data.map(function(item) {
