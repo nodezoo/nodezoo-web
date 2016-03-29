@@ -18,7 +18,6 @@ import Home from '../containers/home'
 import Info from '../containers/info'
 
 export default function createRootComponent (store) {
-
   // Sets react router up so that it uses browser
   // history, enables client side routing
   const history = createHistory()
