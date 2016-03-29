@@ -30,6 +30,7 @@
     "lodash": "3.10.1",
     "moment": "2.11.x",
     "react": "0.14.x",
+    "react-copy-to-clipboard": "^4.0.2",
     "react-dom": "0.14.x",
     "react-redux": "4.0.x",
     "react-router": "1.0.x",
