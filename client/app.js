@@ -5,8 +5,6 @@ import './index.html'
 import './assets/css/app.styl'
 
 
-
-
 import ReactDom from 'react-dom'
 
 import createRootReducer from './bootstrap/createRootReducer'
