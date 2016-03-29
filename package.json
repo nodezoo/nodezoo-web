@@ -43,7 +43,9 @@
     "seneca-mesh": "^0.5.0",
     "style-loader": "0.13.x",
     "superagent": "1.6.x",
-    "toolbag": "0.9.0",
+    "toolbag": "2.0.0",
+    "toolbag-plugin-stats-collector": "1.0.0",
+    "toolbag-plugin-udp-reporter": "1.0.0",
     "vidi-metrics": "0.1.0",
     "vidi-seneca-metrics": "^0.2.0"
   },
