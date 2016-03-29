@@ -40,7 +40,7 @@ export const Info = React.createClass({
 
           {(() => {
             if (!no_github) {
-              return <GitInfo github={github}  npm={npm} />
+              return <GitInfo github={github} />
             }
           })()}
 
