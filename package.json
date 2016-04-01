@@ -41,6 +41,7 @@
     "redux-thunk": "1.0.x",
     "seneca": "2.0.0",
     "seneca-balance-client": "0.4.0",
+    "seneca-entity": "0.0.1",
     "seneca-mesh": "0.7.0",
     "style-loader": "0.13.x",
     "superagent": "1.6.x",
