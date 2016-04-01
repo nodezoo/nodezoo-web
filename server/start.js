@@ -9,6 +9,8 @@ var Hapi = require('hapi')
 var Inert = require('inert')
 var Path = require('path')
 var Seneca = require('seneca')()
+Seneca.use('entity')
+
 
 // Our server routes
 var ClientRoutes = require('./routes/client')
