@@ -8,6 +8,7 @@ var Chairo = require('chairo')
 var Hapi = require('hapi')
 var Inert = require('inert')
 var Path = require('path')
+var Seneca = require('seneca')()
 
 // Our server routes
 var ClientRoutes = require('./routes/client')
@@ -16,7 +17,7 @@ var ApiRoutes = require('./routes/api')
 var opts = {
   vidi_metrics: {
     emitter: {
-      enabled: true
+      enabled: false
     }
   },
   seneca_metrics: {
@@ -41,7 +42,7 @@ var server = new Hapi.Server()
 server.connection({port: PORT})
 
 var plugins = [
-  Chairo,
+  {register: Chairo, options: {seneca: Seneca}},
   Inert
 ]
 
@@ -60,8 +61,6 @@ server.register(plugins, function (err) {
   seneca.use('vidi-metrics', opts.vidi_metrics)
   seneca.use('vidi-seneca-metrics', opts.seneca_metrics)
 
-  seneca.ready(function () {
-    seneca.log.info('hapi', server.info)
-    server.start(endIfErr)
-  })
+  seneca.log.info('hapi', server.info)
+  server.start(endIfErr)
 })
