@@ -7,18 +7,11 @@ Please see our [guide][NodezooSystem] to get the full system up and running loca
 
 - __Sponsor:__ [nearForm][Sponsor]
 
-
-This module is a plugin for the Seneca framework.
-
-If you're using this module, and need help, you can:
+If you're using this microservice, and need help, you can:
 
 - Post a [github issue][],
-- Tweet to [@senecajs][],
+- Tweet to [@nodezoo][],
 - Ask on the [Gitter][gitter-url].
-
-If you are new to Seneca in general, please take a look at
-[senecajs.org][]. We have everything from tutorials to sample apps to
-help get you up and running quickly.
 
 ## Running
 To run the server,
@@ -42,5 +35,5 @@ Licensed under [MIT][].
 [NodeZoo]: http://www.nodezoo.com/
 [NodezooSystem]: https://github.com/nodezoo/nodezoo-system
 [github issue]: https://github.com/nodezoo/nodezoo-web/issues
-[@senecajs]: http://twitter.com/senecajs
+[@senecajs]: http://twitter.com/nodezoo
 [gitter-url]: https://gitter.im/nodezoo/nodezoo-org
