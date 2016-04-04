@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 import {getInfo} from '../actions/info'
 import {GitInfo} from '../components/git-info'
 import {NpmInfo} from '../components/npm-info'
-import {TravisInfo} from '../components/Travis-info'
+import {TravisInfo} from '../components/travis-info'
 
 export const Info = React.createClass({
   propTypes: {
