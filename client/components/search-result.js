@@ -18,9 +18,9 @@ export const SearchResult = React.createClass({
               </h3>
 
               <div className="fl-right module-sources">
-                <a className="logo logo-npm logo-npm-large" target="_blank"></a>
-                <a className="logo logo-git logo-git-large" target="_blank"></a>
-                <a className="logo logo-travis logo-travis-large" target="_blank"></a>
+                { item.npm.connected ? <a className="logo logo-npm logo-npm-large" target="_blank"></a> : null }
+                { item.github.connected ? <a className="logo logo-git logo-git-large" target="_blank"></a> : null }
+                { item.travis.connected ? <a className="logo logo-travis logo-travis-large" target="_blank"></a> : null }
               </div>
             </div>
 
