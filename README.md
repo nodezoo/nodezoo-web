@@ -14,12 +14,10 @@ If you're using this microservice, and need help, you can:
 - Ask on the [Gitter][gitter-url].
 
 ## Running
-To run the server,
+This micro-service can be ran as part of the [Nodezoo][] system. Please follow the
+link below for details on obtaining and running the complete system.
 
-1. Run `npm install` to install all dependencies
-2. Run `npm run build` to build the frontend bundle
-3. Run `npm run start` to start the server on port `8000`
-4. Navigate to `localhost:8000` to access the site
+- [Nodezoo: The complete system][System]
 
 ## Contributing
 The [NodeZoo][] org encourages open participation. If you feel you can help in any way, be it with documentation, examples, extra testing, or new features please get in touch.
