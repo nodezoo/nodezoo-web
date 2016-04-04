@@ -35,5 +35,5 @@ Licensed under [MIT][].
 [NodeZoo]: http://www.nodezoo.com/
 [NodezooSystem]: https://github.com/nodezoo/nodezoo-system
 [github issue]: https://github.com/nodezoo/nodezoo-web/issues
-[@senecajs]: http://twitter.com/nodezoo
+[@nodezoo]: http://twitter.com/nodezoo
 [gitter-url]: https://gitter.im/nodezoo/nodezoo-org
