@@ -14,13 +14,14 @@ export const SearchResult = React.createClass({
             <span className="icon icon-hex-4"></span>
             <div className="cf">
               <h3 className="m0 fl-left">
-                <a className="module-site" target="_blank" href={infoUrl}>{result.name}</a>
+                <a className="txt-uppercase" target="_blank" href={infoUrl}>{result.name}</a>
+                <span className="txt-dimmed"> {result.npm.version}</span>
               </h3>
 
               <div className="fl-right module-sources">
-                { result.npm.connected ? <a className="logo logo-npm logo-npm-large" target="_blank"></a> : null }
-                { result.github.connected ? <a className="logo logo-git logo-git-large" target="_blank"></a> : null }
-                { result.travis.connected ? <a className="logo logo-travis logo-travis-large" target="_blank"></a> : null }
+                {result.npm.connected ? <a href={result.npm.url} target='_blank' className="logo logo-npm logo-npm-large" target="_blank"></a> : null}
+                {result.github.connected ? <a href={result.github.url} target='_blank' className="logo logo-git logo-git-large" target="_blank"></a> : null}
+                {result.travis.connected ? <a href={result.travis.url} target='_blank' className="logo logo-travis logo-travis-large" target="_blank"></a> : null}
               </div>
             </div>
 
@@ -29,27 +30,24 @@ export const SearchResult = React.createClass({
             </div>
 
             <ul className="list-unstyled list-inline cf">
-              <li>
-                <a className="icon icon-info" target="_blank"></a>
-              </li>
 
               <li className="module-git-star-line">
                 <span aria-hidden="true" className="icon icon-star"></span>
-                <span className="module-git-star"> { result.github.stars } </span>
+                <span className="module-git-star"> {result.github.stars} </span>
               </li>
 
               <li className="module-git-fork-line">
                 <span aria-hidden="true" className="icon icon-fork"></span>
-                <span className="module-git-fork">{ result.github.forks }</span>
+                <span className="module-git-fork">{result.github.forks}</span>
               </li>
             </ul>
 
-            <p className="mb0 mthalf"><a className="module-similar">See related modules →</a></p>
+            <p className="mb0 mthalf fl-right"><a className="module-similar">See related modules →</a></p>
           </div>
         </div>
       </div>
     )
-  }
+ }
 })
 
 export default SearchResult
