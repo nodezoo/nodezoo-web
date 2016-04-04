@@ -3,7 +3,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {search} from '../actions/search'
-import {SearchResult} from '../components/searchResult'
+import {SearchResult} from '../components/search-result'
 
 export const Home = React.createClass({
   propTypes: {
