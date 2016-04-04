@@ -17,7 +17,7 @@ If you're using this microservice, and need help, you can:
 This micro-service can be ran as part of the [Nodezoo][] system. Please follow the
 link below for details on obtaining and running the complete system.
 
-- [Nodezoo: The complete system][System]
+- [Nodezoo: The complete system][NodezooSystem]
 
 ## Contributing
 The [NodeZoo][] org encourages open participation. If you feel you can help in any way, be it with documentation, examples, extra testing, or new features please get in touch.
