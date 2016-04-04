@@ -1,11 +1,17 @@
 ![Nodezoo](/client/assets/img/logo-nodezoo.png)
 
 # nodezoo-web
-Nodezoo Web is the frontend client and server for the Nodezoo search engine. Nodezoo is an example microservice system written in node.js and designed to help you explore a full microservice system. 
+Nodezoo Web is the frontend client and server for the Nodezoo search engine. Nodezoo is an example microservice system written in node.js and designed to help you explore a full microservice system.
 
 Please see our [guide][NodezooSystem] to get the full system up and running locally.
 
 - __Sponsor:__ [nearForm][Sponsor]
+
+If you're using this microservice, and need help, you can:
+
+- Post a [github issue][],
+- Tweet to [@nodezoo][],
+- Ask on the [Gitter][gitter-url].
 
 ## Running
 To run the server,
@@ -28,3 +34,6 @@ Licensed under [MIT][].
 [Sponsor]: http://www.nearform.com/
 [NodeZoo]: http://www.nodezoo.com/
 [NodezooSystem]: https://github.com/nodezoo/nodezoo-system
+[github issue]: https://github.com/nodezoo/nodezoo-web/issues
+[@nodezoo]: http://twitter.com/nodezoo
+[gitter-url]: https://gitter.im/nodezoo/nodezoo-org
