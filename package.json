@@ -1,6 +1,6 @@
 {
   "name": "nodezoo-web",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Frontend for NodeZoo",
   "author": "Richard Rodger",
   "contributors": [
@@ -20,13 +20,15 @@
     "copy": "copyfiles -f ./client/assets/img/favicon.png ./dist/img",
     "build": "npm run copy & webpack --progress --colors",
     "watch": "webpack -w",
-    "start": "node -r toolbag server/start.js --seneca.options.tag=nodezoo-web --seneca.options.debug.short_logs=true --seneca.log=type:act"
+    "start": "node -r toolbag server/start.js --seneca.options.tag=nodezoo-web --seneca.options.debug.short_logs=true --seneca.log=type:act",
+    "prepublish": "in-publish && npm run build || not-in-publish"
   },
   "dependencies": {
     "boom": "3.x.x",
     "chairo": "2.1.0",
     "hapi": "12.0.0",
     "history": "1.17.x",
+    "in-publish": "^2.0.0",
     "inert": "3.x.x",
     "lodash": "3.10.1",
     "moment": "2.11.x",
