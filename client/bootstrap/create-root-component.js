@@ -2,6 +2,7 @@
 
 // Modules to handle react-router and
 // syncing it up with our Redux store.
+import React from 'react'
 import {Provider} from 'react-redux'
 import {createHistory} from 'history'
 import {syncReduxAndRouter} from 'redux-simple-router'
