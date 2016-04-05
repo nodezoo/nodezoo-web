@@ -7,19 +7,18 @@ export const GitInfo = React.createClass({
   propTypes: {
     github: React.PropTypes.object.isRequired
   },
-  getInitialState: function() {
-    return {showPopUp:false};
+  getInitialState: function () {
+    return {showPopUp: false}
   },
   transitionCopy: function () {
     var self = this
-    //might want to bring in react-addons transition group for this
+    // might want to bring in react-addons transition group for this
     this.setState({showPopUp: true})
-    setTimeout(function() {
+    setTimeout(function () {
       self.setState({showPopUp: false})
     }, 500)
   },
   render () {
-    var popup = this.state.showPopUp ? 'fade-out' : 'hide'
     return (
       <div className="panel-module">
         <h2 className="mt0"><a href={this.props.github.url} target="_blank" className="logo logo-git"></a> Github</h2>
