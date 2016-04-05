@@ -12,11 +12,15 @@
   background-size: contain
   opacity: .5
 
+.icon-rg
+  height: 20px
+  width: 20px
+  margin: 2px
+
 .icon-star,
 .icon-fork,
 .icon-info
-  height: 20px
-  width: 20px
+  @extends .icon-rg
   margin-right: 5px
 
 .icon-fork
@@ -25,6 +29,10 @@
 
 .icon-star
   background-image: url("../img/icon-star.svg")
+
+.icon-clipboard
+  @extends .icon, .icon-rg
+  background-image: url("../img/icon-clipboard.svg")
 
 .icon-info
   top: 2px
@@ -62,4 +70,3 @@
   width: 15px
   margin-right: 5px
   background-image: url("../img/icon-refresh-blue.svg")
-
