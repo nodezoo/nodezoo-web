@@ -13,7 +13,7 @@ export const NpmInfo = React.createClass({
         <ul className="list-unstyled cf module-info-list">
           <li><strong className="module-info-heading">Tagline:</strong> {this.props.npm.desc}</li>
           <li><strong className="module-info-heading">Version:</strong> {this.props.npm.version}</li>
-          </ul>
+        </ul>
       </div>
     )
   }
