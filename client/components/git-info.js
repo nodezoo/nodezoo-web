@@ -7,6 +7,17 @@ export const GitInfo = React.createClass({
   propTypes: {
     github: React.PropTypes.object.isRequired
   },
+  getInitialState: function () {
+    return {showPopUp: false}
+  },
+  transitionCopy: function () {
+    var self = this
+    // might want to bring in react-addons transition group for this
+    this.setState({showPopUp: true})
+    setTimeout(function () {
+      self.setState({showPopUp: false})
+    }, 500)
+  },
   render () {
     return (
       <div className="panel-module">
@@ -17,11 +28,12 @@ export const GitInfo = React.createClass({
             <a href={this.props.github.url} target="_blank"> {this.props.github.url}</a>
           </li>
           <li>
-            <strong className="module-info-heading">Clone URL:</strong>
+            <strong className="module-info-heading">Clone Repo:</strong>
               &nbsp;{this.props.github.gitClone} &nbsp;
             <CopyToClipboard text={this.props.github.gitClone}>
-              <button className="btn">Copy</button>
+                <span><a onClick={this.transitionCopy} className="icon-clipboard"></a></span>
             </CopyToClipboard>
+            <span className={this.state.showPopUp ? 'visible' : 'hidden'}> Copied!</span>
           </li>
           <li><strong className="module-info-heading">Watches:</strong> {this.props.github.watches}</li>
           <li><strong className="module-info-heading">Forks:</strong> {this.props.github.forks}</li>

@@ -1,0 +1,42 @@
+/*--------------------------------------------------------------------
+*
+* Popovers/Tooltips
+*
+--------------------------------------------------------------------*/
+
+.visible
+  visibility: visible;
+  opacity: 1;
+
+.hidden
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s .5s, opacity .5s linear;
+
+/*--------------------------------------------------------------------
+*
+* Tooltip usage:
+*   <a className="icon-clipboard" title="Copy"><span title="surpress browser tooltip" /></a>
+*
+* Note the inner span to prevent browser tooltip from popping
+*
+--------------------------------------------------------------------*/
+
+.tooltip
+  display: inline;
+  position: relative;
+  &:hover:after
+    background: #111
+    background: rgba(0,0,0,.8)
+    border-radius: .5em
+    font-size: .8em
+    bottom: 1.35em
+    color: #fff
+    content: attr(title)
+    display: block
+    left: 0
+    padding: .3em 1em
+    position: absolute
+    text-shadow: 0 1px 0 #000
+    white-space: nowrap
+    z-index: 98

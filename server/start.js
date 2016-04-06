@@ -1,6 +1,5 @@
 'use strict'
 
-var HOST = process.env.HOST || 'localhost'
 var PORT = process.env.PORT || 8000
 
 // Our hapi server bits
@@ -10,7 +9,6 @@ var Inert = require('inert')
 var Path = require('path')
 var Seneca = require('seneca')()
 Seneca.use('entity')
-
 
 // Our server routes
 var ClientRoutes = require('./routes/client')
@@ -31,7 +29,6 @@ var opts = {
     ]
   }
 }
-
 
 function endIfErr (err) {
   if (err) {

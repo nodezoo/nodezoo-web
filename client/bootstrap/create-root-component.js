@@ -8,10 +8,6 @@ import {createHistory} from 'history'
 import {syncReduxAndRouter} from 'redux-simple-router'
 import {Router, Route, IndexRoute} from 'react-router'
 
-import {getInfo} from '../actions/info'
-
-import { pushPath } from 'redux-simple-router'
-
 // Our container components.
 import Shell from '../containers/shell'
 import Home from '../containers/home'
