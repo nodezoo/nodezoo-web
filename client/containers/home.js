@@ -28,20 +28,6 @@ export const Home = React.createClass({
   },
 
   render () {
-    /* var List = React.createClass({
-      render: function() {
-        return (<div>
-          { this.props.data.map(function(item) {
-            return <div>{item}</div>
-          })
-          }
-        </div>);
-      }
-    });
-
-    var data =  ['red', 'green', 'blue'];
-
-    React.render(<List data={ data }  />, document.body);*/
 
     let query = this.props.query
     let items = this.props.result
