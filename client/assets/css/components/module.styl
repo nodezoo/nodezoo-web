@@ -45,14 +45,40 @@
 .module-sources
   line-height: 0
 
+.module-description
+  padding: 8px
+  margin: 0
+
+.travis-badge
+  color: #fff
+  font-size: .7em
+  margin-top: 4px
+  label, .status
+    padding: 5px 6px
+  label
+    border-top-left-radius: 2px
+    border-bottom-left-radius: 2px
+    background-color: #585656
+  .status
+    border-top-right-radius: 2px
+    border-bottom-right-radius: 2px
+    background-color: #ccc
+    &.failed
+      background-color: #aa2614
+    &.passed
+      background-color: #56A93C
+
+#query-results-container
+  &.panel
+    padding: $ui-spacing-half
+
 @media screen and (min-width: 767px)
 
   .module-git-info
     text-align: right
-    
+
   .module-header
     h1
       text-align: left
     a
       text-align: right
-
