@@ -28,7 +28,6 @@ export const Home = React.createClass({
   },
 
   render () {
-
     let query = this.props.query
     let items = this.props.result
     let body = null

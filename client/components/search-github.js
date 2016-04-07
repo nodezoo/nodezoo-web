@@ -7,7 +7,7 @@ export const GithubResult = React.createClass({
     github: React.PropTypes.object.isRequired
   },
   render () {
-    let colClasses = "col-xs-4 col-sm-4 col-md-4 col-lg-4"
+    let colClasses = 'col-xs-4 col-sm-4 col-md-4 col-lg-4'
     return (
       <div className="row">
         <div className={colClasses}>
