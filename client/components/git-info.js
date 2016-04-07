@@ -21,7 +21,7 @@ export const GitInfo = React.createClass({
   render () {
     return (
       <div className="panel-module">
-        <h2 className="mt0"><a href={this.props.github.url} target="_blank" className="logo logo-git"></a> Github</h2>
+        <h2 className="mt0"><a href={this.props.github.url} target="_blank" className="logo logo-github"></a> Github</h2>
         <ul className="list-unstyled module-info-list cf">
           <li><strong className="module-info-heading">Created:</strong> {this.props.github.last}</li>
           <li><strong className="module-info-heading">URL:</strong>
