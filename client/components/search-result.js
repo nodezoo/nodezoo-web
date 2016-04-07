@@ -17,7 +17,7 @@ export const SearchResult = React.createClass({
             <span className="txt-dimmed"> {result.npm.version}
             </span>
           </h3>
-          <TravisBadge className="fl-right" buildState={result.travis.buildState}/>
+          { result.travis.connected ? <TravisBadge className="fl-right" buildState={result.travis.buildState}/> : null }
           <div className="fl-right module-sources">
             {result.github.connected ? <a href={result.github.url} target='_blank' className="logo logo-git" target="_blank"></a> : null}
             {result.npm.connected ? <a href={result.npm.url} target='_blank' className="logo logo-npm" target="_blank"></a> : null}
