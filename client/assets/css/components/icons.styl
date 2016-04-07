@@ -6,7 +6,7 @@
 
 .icon
   display: inline-block
-  top: 2px
+  margin: .2em
   position: relative
   background-repeat: no-repeat
   background-size: contain
@@ -15,29 +15,24 @@
 .icon-rg
   height: 20px
   width: 20px
-  margin: 2px
 
 .icon-star,
 .icon-fork,
-.icon-info
-  @extends .icon-rg
-  margin-right: 5px
+.icon-info,
+.icon-eye
+.icon-clipboard
+  @extends .icon-rg, .icon
 
 .icon-fork
-  width: 20px
   background-image: url("../img/icon-fork.svg")
 
 .icon-eye
-  width: 20px
-  height: 20px
   background-image: url("../img/icon-eye.svg")
-  @extends .icon
 
 .icon-star
   background-image: url("../img/icon-star.svg")
 
 .icon-clipboard
-  @extends .icon, .icon-rg
   background-image: url("../img/icon-clipboard.svg")
 
 .icon-info
