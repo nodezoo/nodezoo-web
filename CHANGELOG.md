@@ -6,6 +6,7 @@ Pending - x.x.x
 * Moved GitHub info in search result to its own component
 * Added Travis badge
 * Linted
+* Updated information displayed on /info page.
 
 6 April 2016 - 6.0.0
 ---
