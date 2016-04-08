@@ -14,14 +14,6 @@
     "type": "git",
     "url": "https://github.com/rjrodger/nodezoo-web.git"
   },
-  "files": [
-    "client",
-    "dist",
-    "server",
-    "Dockerfile",
-    ".toolbagrc.js",
-    "webpack.config.js"
-  ],
   "scripts": {
     "test": "lab test/*.test.js -r console -v -L -m 3000",
     "lint": "lab test -dL",
