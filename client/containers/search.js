@@ -58,9 +58,9 @@ export const Home = React.createClass({
             </Col>
           </Row>
         </RowCol>
-        <RowCol xs={12} rowClass="center-xs">
+        <Row className="center-xs">
           {body}
-        </RowCol>
+        </Row>
       </Col>
     )
   }
