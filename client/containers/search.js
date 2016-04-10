@@ -48,7 +48,7 @@ export const Home = React.createClass({
 
     return (
       <Col xs={12}>
-        <RowCol rowClass="center-xs" colElement='form' id="query-form" xs={12} sm={10} md={8} className="panel" onSubmit={this.handleSearch}>
+        <RowCol rowClass="center-xs" colElement='form' id="query-form" xs={12} md={8} className="panel" onSubmit={this.handleSearch}>
           <Row>
             <Col xs={12} sm={8}>
               <input ref="query" type="search" placeholder="Module Name" id="query-term" className="input-large" />
