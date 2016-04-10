@@ -4,7 +4,7 @@ import React from 'react'
 import GithubResult from './search-github'
 import ModuleSource from './module-source'
 import TravisBadge from './travis-badge'
-import {Row, Col, RowCol} from './layout'
+import {Col} from './layout'
 
 export const SearchResult = React.createClass({
   hasBuild (travis) {

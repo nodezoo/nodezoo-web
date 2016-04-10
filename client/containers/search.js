@@ -11,14 +11,6 @@ export const Home = React.createClass({
     dispatch: React.PropTypes.func.isRequired
   },
 
-  componentDidMount () {
-
-  },
-
-  componentWillUnmount () {
-
-  },
-
   handleSearch (event) {
     event.preventDefault()
 

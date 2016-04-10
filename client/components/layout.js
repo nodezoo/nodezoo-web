@@ -5,18 +5,18 @@ const GRIDSIZES = {
   'sm': 'col-sm-',
   'xs': 'col-xs-',
   'lg': 'col-lg-',
-  'xsOS' : 'col-xs-offset-',
-  'smOS' : 'col-sm-offset-',
-  'mdOS' : 'col-md-offset-',
-  'lgOS' : 'col-lg-offset-',
-  'xsHide' : 'col-xs-hidden',
-  'smHide' : 'col-sm-hidden',
-  'mdHide' : 'col-md-hidden',
-  'lgHide' : 'col-lg-hidden'
+  'xsOS': 'col-xs-offset-',
+  'smOS': 'col-sm-offset-',
+  'mdOS': 'col-md-offset-',
+  'lgOS': 'col-lg-offset-',
+  'xsHide': 'col-xs-hidden',
+  'smHide': 'col-sm-hidden',
+  'mdHide': 'col-md-hidden',
+  'lgHide': 'col-lg-hidden'
 }
 
 var Row = React.createClass({
-  render: function() {
+  render: function () {
     var Tag = this.props.rowElement || 'div'
     return (
       <Tag className={this.props.className ? `${this.props.className} row` : 'row' }> {this.props.children} </Tag>
@@ -38,20 +38,21 @@ var Col = React.createClass({
     xsOffset: React.PropTypes.number,
     smOffset: React.PropTypes.number,
     mdOffset: React.PropTypes.number,
-    lgOffset: React.PropTypes.number,
+    lgOffset: React.PropTypes.number
   },
   assignClasses: function () {
     var classes = Object.keys(GRIDSIZES).reduce((classes, currentClass) => {
       if (this.props[currentClass]) {
         return `${classes} ${GRIDSIZES[currentClass]}${this.props[currentClass]} ` // add previous added classes, plus current one
-      } else {
+      }
+      else {
         return classes // didn't exist, so don't do anything
       }
     }, 'col ')
     classes = this.props.className ? `${classes} ${this.props.className}` : classes
     return classes
   },
-  render() {
+  render () {
     var Tag = this.props.colElement || 'div'
     return (
       <Tag {...this.props} className={this.assignClasses()}>
@@ -61,11 +62,11 @@ var Col = React.createClass({
   }
 })
 
-var  RowCol = React.createClass({
+var RowCol = React.createClass({
   propTypes: {
     rowClass: React.PropTypes.string
   },
-  render: function() {
+  render: function () {
     return (
       <Row rowElement={this.props.rowElement} className={this.props.rowClass}>
         <Col {...this.props}>{this.props.children}</Col>
