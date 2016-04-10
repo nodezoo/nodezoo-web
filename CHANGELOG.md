@@ -7,6 +7,7 @@ Pending - x.x.x
 * Added Travis badge
 * Linted
 * Updated information displayed on /info page.
+* Implement a React Responsive Flex Grid
 
 6 April 2016 - 6.0.0
 ---
