@@ -1,12 +1,12 @@
-# Grid System
+# 12 Column Grid System
 
 To prevent project bloat, we have adapted our own layout system. The basis of the grid
 system within this project is taken from bootstrap 3, adapted to flexbox, written in
 stylus, and finally composed into a set of React components.
 
 This grid supports setting only the smallest viewport ruleset and autoscaling unless
-there is an another ruleset in a larger viewport. If found, that rule it will take
-precedent from its viewport onward.
+there is an another ruleset in a larger viewport. If found, that rule will take over
+from its viewport onward.
 
 ## Usage
 To use, require in the necessary components,
@@ -51,6 +51,7 @@ Creates a horizontal column. Many columns can be place in a Row.
 #### Notes
 
 - colElement defaults to `div` if none is specified.
+- Column sizes should always add up to 12 for each viewport used (viewport being xs, sm, md, lg)
 
 
 ### Row Column
