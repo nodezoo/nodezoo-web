@@ -1,84 +1,78 @@
-To prevent project bloat, we have adapted our own layout system
+# Grid System
 
-The usage of the grid system within this project is taken from bootstrap 3,
-adapted to flexbox, written in stylus, and final composition is that of a
-React Component
+To prevent project bloat, we have adapted our own layout system. The basis of the grid
+system within this project is taken from bootstrap 3, adapted to flexbox, written in
+stylus, and finally composed into a set of React components.
 
-### Example Row
+This grid supports setting only the smallest viewport ruleset and autoscaling unless
+there is an another ruleset in a larger viewport. If found, that rule it will take
+precedent from its viewport onward.
 
+## Usage
+To use, require in the necessary components,
+
+```
+import { Row, Col, RowCol } from '../components/layout'
+```
+
+## Components
+The following React components are available for building out grid based layouts
+
+### Row
+Creates a horizontal row to place columns in.
+
+#### Usage
 ```
 <Row rowElement='form' className="myClass"></Row
-
 ```
 
-Yields
-
+#### Result
 ```
 <form class="row myClass"></form
-
 ```
 
-Nothing special, just to simplify having to type className="row" all the time
+#### Notes
+- rowElement defaults to `div` if none is specified.
 
-Dom Tag defaults to `div` and is optional
 
+### Column
+Creates a horizontal column. Many columns can be place in a Row.
 
-Example Column
+#### Usage
+```
+<Col sm={6} lg={4} xsHidden className="myClass"></Col>
+```
 
-```<Col sm={6} lg={4} xsHidden className="myClass"></Col>```
-
-Yields
-
+#### Result
 ```
 <div className="myClass xs-hidden col col-xs-12 col-sm-6 col-lg-4" ></div>
-
 ```
 
-However, if don't want to render a `div` and rather another element, `Col` supports the property `colElement` as well
+#### Notes
 
-```
-<Col colElement=span xs={3}><Col>
-```
-Yields
-
-```
-<span className="col col-xs-3"></span
-
-```
-
-Note: This does support the ability to write
-
-```
-<Col xs={6}> </Col>
-
-```
-
-and have it render a 6 column (half page) layout for all viewports, aka, it
-starts at smallest viewport ruleset and scales it up to largest unless there is
-an another ruleset in a larger viewport, then it will take precedent from its
-viewport onward
+- colElement defaults to `div` if none is specified.
 
 
-### Row Column (for simple row ->1 column layout)
+### Row Column
+Creates a single row, single container for ease of use.
 
+#### Usage
 ```
 <RowCol rowElement="form" rowClass="something" placeholder="sup" colElement="input" type="text" xs={12} />
 ```
 
-Yields
-
+#### Result
 ```
 <form className="something">
   <input type="text" placeholder="sup" className="col col-xs-12"></>
 </form>
-
 ```
 
-### Properties
+#### Notes
+- supports rowElement and colElement properties.
 
-As far as learning the grid system, use this as a reference
-
-[Bootstrap 3](https://getbootstrap.com/examples/grid/)
+## Reference
+The grid below provides a quick reference for ease of use.
 
 | Property   | Type   | Usage                                                                                        |
 |------------|--------|----------------------------------------------------------------------------------------------|
