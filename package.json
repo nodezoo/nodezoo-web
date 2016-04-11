@@ -4,9 +4,11 @@
   "description": "Frontend for NodeZoo",
   "author": "Richard Rodger",
   "contributors": [
-    "Richard Rodger",
-    "Dean McDonnell",
-    "Karolina Szczur"
+    "Richard Rodger (https://github.com/rjrodger)",
+    "Dean McDonnell (https://github.com/mcdonnelldean)",
+    "Karolina Szczur (https://github.com/thefoxis)",
+    "Georgette Pincin (https://github.com/Georgette)",
+    "Vladimir Islamov (https://github.com/vislamov)"
   ],
   "main": "./server/start.js",
   "license": "MIT",
