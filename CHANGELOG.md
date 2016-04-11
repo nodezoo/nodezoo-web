@@ -1,5 +1,5 @@
-Pending - x.x.x
----
+## Pending - 6.1.0
+
 * Added CHANGELOG.md
 * Added GitHub Watches
 * Cleaned code
@@ -9,7 +9,7 @@ Pending - x.x.x
 * Updated information displayed on /info page.
 * Implement a React Responsive Flex Grid
 
-6 April 2016 - 6.0.0
----
+## 6 April 2016 - 6.0.0
+
 * First release of the 6th major revision of nodezoo.
 * Switched to using npm released packages instead of git checkouts.
