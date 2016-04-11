@@ -4,18 +4,11 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {search} from '../actions/search'
 import {SearchResult} from '../components/search-result'
+import { Row, Col, RowCol } from '../components/layout'
 
 export const Home = React.createClass({
   propTypes: {
     dispatch: React.PropTypes.func.isRequired
-  },
-
-  componentDidMount () {
-
-  },
-
-  componentWillUnmount () {
-
   },
 
   handleSearch (event) {
@@ -46,20 +39,21 @@ export const Home = React.createClass({
     }
 
     return (
-      <div className="home">
-
-        <div className="row center-xs">
-          <form id="query-form" className="panel col-xs-12 col-sm-10 col-md-8 col-rg-6" onSubmit={this.handleSearch}>
-            <fieldset>Search for <a href="http://nodejs.org">Node.js</a> modules</fieldset>
-            <input ref="query" type="search" placeholder="Module name" id="query-term" className="input-large" />
-            <button id="query-submit" type="submit" className="btn btn-large">Find modules</button>
-          </form>
-        </div>
-
-        <div className="row center-xs">
+      <Col xs={12}>
+        <RowCol rowClass="center-xs" colElement='form' id="query-form" xs={12} md={8} className="panel" onSubmit={this.handleSearch}>
+          <Row>
+            <Col xs={12} sm={8}>
+              <input ref="query" type="search" placeholder="Module Name" id="query-term" className="input-large" />
+            </Col>
+            <Col xs={12} sm={4}>
+              <button id="query-submit" type="submit" className="btn btn-large">Search</button>
+            </Col>
+          </Row>
+        </RowCol>
+        <Row className="center-xs">
           {body}
-        </div>
-      </div>
+        </Row>
+      </Col>
     )
   }
 })

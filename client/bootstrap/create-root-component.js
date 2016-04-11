@@ -10,7 +10,7 @@ import {Router, Route, IndexRoute} from 'react-router'
 
 // Our container components.
 import Shell from '../containers/shell'
-import Home from '../containers/home'
+import Search from '../containers/search'
 import Info from '../containers/info'
 
 export default function createRootComponent (store) {
@@ -29,7 +29,7 @@ export default function createRootComponent (store) {
     <Provider store={store}>
       <Router history={history}>
         <Route path="/" component={Shell}>
-          <IndexRoute component={Home} />
+          <IndexRoute component={Search} />
           <Route path="info(/:moduleName)" component={Info}/>
         </Route>
       </Router>

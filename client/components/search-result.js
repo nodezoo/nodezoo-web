@@ -4,16 +4,17 @@ import React from 'react'
 import GithubResult from './search-github'
 import ModuleSource from './module-source'
 import TravisBadge from './travis-badge'
+import {Col} from './layout'
 
 export const SearchResult = React.createClass({
   hasBuild (travis) {
     return travis && travis.connected && (travis.buildState === 'failed' || travis.buildState === 'passed')
   },
-  render () {   
+  render () {
     const result = this.props.data
     const infoUrl = `/info/${result.name}`
     return (
-      <div id="query-results-container" className="panel col-xs-12 col-sm-10 col-md-8 col-rg-6">
+      <Col id="query-results-container" xs={12} sm={10} md={8} className="panel">
         <span className="icon icon-hex-4"></span>
         <div className="cf">
           <h3 className="m0 fl-left">
@@ -36,7 +37,7 @@ export const SearchResult = React.createClass({
           <i>{result.npm.description}</i>
         </p>
         <GithubResult github={result.github}/>
-      </div>
+      </Col>
     )
   }
 })
