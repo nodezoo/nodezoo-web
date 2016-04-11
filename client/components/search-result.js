@@ -14,7 +14,7 @@ export const SearchResult = React.createClass({
     const result = this.props.data
     const infoUrl = `/info/${result.name}`
     return (
-      <Col id="query-results-container" xs={12} sm={10} md={8} className="panel">
+      <Col id="query-results-container" xs={12} md={8} className="panel">
         <span className="icon icon-hex-4"></span>
         <div className="cf">
           <h3 className="m0 fl-left">
