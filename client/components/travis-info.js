@@ -15,7 +15,6 @@ export const TravisInfo = React.createClass({
           <li><strong className="module-info-heading">Name:</strong> {this.props.travis.name}</li>
           <li><strong className="module-info-heading">URL:</strong> <a href={this.props.travis.url}>{this.props.travis.url}</a></li>
           <li><strong className="module-info-heading">ID:</strong> {this.props.travis.id}</li>
-          <li><strong className="module-info-heading">Group:</strong> {this.props.travis.group}</li>
           <li><strong className="module-info-heading">Active:</strong> {this.props.travis.active.toString()}</li>
           <li><strong className="module-info-heading">Build state:</strong> {this.props.travis.buildState}</li>
           <li><strong className="module-info-heading">Last built at:</strong> {this.props.travis.lastBuilt}</li>
