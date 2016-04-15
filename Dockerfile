@@ -15,4 +15,4 @@ RUN npm run build
 
 EXPOSE 8000
 
-CMD ["node", "-r", "toolbag", "server/start.js", "--seneca.options.tag=nodezoo-web", "--seneca-log=type:act"]
+CMD ["node", "server/start.js", "--seneca.options.tag=nodezoo-web", "--seneca-log=type:act"]
