@@ -9,6 +9,7 @@
 * Updated information displayed on /info page.
 * Implement a React Responsive Flex Grid
 * Removed 'Group' from travis-info, fixed 'URL' in npm-info.
+* Removed toolbag
 
 ## 6 April 2016 - 6.0.0
 

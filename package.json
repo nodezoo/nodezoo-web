@@ -21,7 +21,6 @@
     "dist",
     "server",
     "Dockerfile",
-    ".toolbagrc.js",
     "webpack.config.js"
   ],
   "scripts": {
@@ -30,7 +29,7 @@
     "copy": "copyfiles -f ./client/assets/img/favicon.png ./dist/img",
     "build": "npm run copy & webpack --progress --colors",
     "watch": "webpack -w",
-    "start": "node -r toolbag server/start.js --seneca.options.tag=nodezoo-web --seneca.options.debug.short_logs=true --seneca.log=type:act",
+    "start": "node server/start.js --seneca.options.tag=nodezoo-web --seneca.options.debug.short_logs=true --seneca.log=type:act",
     "prepublish": "in-publish && npm run build || not-in-publish"
   },
   "dependencies": {
@@ -57,9 +56,6 @@
     "seneca-mesh": "0.7.0",
     "style-loader": "0.13.x",
     "superagent": "1.6.x",
-    "toolbag": "2.0.0",
-    "toolbag-plugin-stats-collector": "1.0.0",
-    "toolbag-plugin-udp-reporter": "1.0.0",
     "vidi-metrics": "0.1.0",
     "vidi-seneca-metrics": "0.2.0"
   },
