@@ -24,7 +24,7 @@
     "webpack.config.js"
   ],
   "scripts": {
-    "test": "lab test/*.test.js -r console -v -L -m 3000",
+    "test": "lab -v -P test -L -c -t 0",
     "lint": "lab test -dL",
     "copy": "copyfiles -f ./client/assets/img/favicon.png ./dist/img",
     "build": "npm run copy & webpack --progress --colors",
