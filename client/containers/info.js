@@ -4,6 +4,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {getInfo} from '../actions/info'
 import {GitInfo} from '../components/git-info'
+import {GitReadme} from '../components/git-readme'
 import {NpmInfo} from '../components/npm-info'
 import {TravisInfo} from '../components/travis-info'
 
@@ -47,6 +48,12 @@ export const Info = React.createClass({
           {(() => {
             if (!no_travis) {
               return <TravisInfo travis={travis} />
+            }
+          })()}
+
+          {(() => {
+            if (!no_github && github.readme) {
+              return <GitReadme github={github} />
             }
           })()}
         </div>
