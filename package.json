@@ -24,7 +24,7 @@
     "webpack.config.js"
   ],
   "scripts": {
-    "test": "mocha --compilers .:test/compiler.js test/travis-badge.test.js",
+    "test": "mocha --compilers .:test/compiler.js test/*test.js",
     "lint": "lab test -dL",
     "copy": "copyfiles -f ./client/assets/img/favicon.png ./dist/img",
     "build": "npm run copy & webpack --progress --colors",
