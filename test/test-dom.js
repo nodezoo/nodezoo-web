@@ -1,5 +1,5 @@
 // this setups up a test dom
-// usage require('./testdom')(MARKUP)
+// usage require('./testdom')([MARKUP]), where markup is optional and default is a html body
 // This needs to go before React is required, so that it knows about the fake DOM
 module.exports = function (markup) {
   if (typeof document !== 'undefined') return
