@@ -1,10 +1,9 @@
-'use strict'
-
 import React from 'react'
 
 export const TravisBadge = React.createClass({
   propTypes: {
-    buildState: React.PropTypes.string.isRequired
+    buildState: React.PropTypes.string.isRequired,
+    className: React.PropTypes.string
   },
   render () {
     return (
