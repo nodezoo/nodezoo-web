@@ -30,6 +30,7 @@
     "build": "npm run copy & webpack --progress --colors",
     "watch": "webpack -w",
     "start": "node server/start.js --seneca.options.tag=nodezoo-web --seneca.options.debug.short_logs=true --seneca.log=type:act",
+    "isolated": "RUN_ISOLATED=true npm run start",
     "prepublish": "in-publish && npm run build || not-in-publish"
   },
   "dependencies": {

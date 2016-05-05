@@ -14,6 +14,7 @@ Seneca.use('entity')
 var ClientRoutes = require('./routes/client')
 var ApiRoutes = require('./routes/api')
 
+var envs = process.env
 var opts = {
   vidi_metrics: {
     emitter: {
@@ -56,9 +57,21 @@ server.register(plugins, function (err) {
 
   var seneca = server.seneca
 
-  seneca.use('mesh', {auto: true})
-  seneca.use('vidi-metrics', opts.vidi_metrics)
-  seneca.use('vidi-seneca-metrics', opts.seneca_metrics)
+  if (envs.RUN_ISOLATED) {
+    seneca.add('role:info,cmd:get', (msg, done) => {
+      try {
+        var dummyDataPath = Path.join(__dirname, '../test/dummy/')
+
+        done(null, JSON.parse(require('fs').readFileSync(dummyDataPath + msg.name)))
+      } catch (e) {
+        done(null, {})
+      }
+    })
+  } else {
+    seneca.use('mesh', {auto: true})
+    seneca.use('vidi-metrics', opts.vidi_metrics)
+    seneca.use('vidi-seneca-metrics', opts.seneca_metrics)
+  }
 
   seneca.log.info('hapi', server.info)
   server.start(endIfErr)
