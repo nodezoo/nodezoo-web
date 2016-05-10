@@ -11,7 +11,7 @@ const Shell = React.createClass({
 
     return (
       <div className="shell">
-        <Header />
+        <Header {...this.props}/>
         {children}
         <Footer />
       </div>
@@ -22,6 +22,7 @@ const Shell = React.createClass({
 
 function mapStatesToProps (state) {
   return {
+    state: state
   }
 }
 

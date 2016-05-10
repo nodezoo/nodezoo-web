@@ -13,6 +13,7 @@ Seneca.use('entity')
 // Our server routes
 var ClientRoutes = require('./routes/client')
 var ApiRoutes = require('./routes/api')
+var AuthRoutes = require('./routes/auth')
 
 var envs = process.env
 var opts = {
@@ -54,6 +55,7 @@ server.register(plugins, function (err) {
 
   server.route(ClientRoutes)
   server.route(ApiRoutes)
+  server.route(AuthRoutes)
 
   var seneca = server.seneca
 

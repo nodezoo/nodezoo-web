@@ -12,6 +12,7 @@ import {Router, Route, IndexRoute} from 'react-router'
 import Shell from '../containers/shell'
 import Search from '../containers/search'
 import Info from '../containers/info'
+import Login from '../containers/login'
 
 export default function createRootComponent (store) {
   // Sets react router up so that it uses browser
@@ -31,6 +32,7 @@ export default function createRootComponent (store) {
         <Route path="/" component={Shell}>
           <IndexRoute component={Search} />
           <Route path="info(/:moduleName)" component={Info}/>
+          <Route path="login" component={Login}/>
         </Route>
       </Router>
     </Provider>
