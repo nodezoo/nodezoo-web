@@ -1,6 +1,6 @@
 {
   "name": "nodezoo-web",
-  "version": "6.1.1",
+  "version": "6.1.2",
   "description": "Frontend for NodeZoo",
   "author": "Richard Rodger",
   "contributors": [
@@ -52,7 +52,7 @@
     "redux-simple-router": "1.0.x",
     "redux-thunk": "1.0.x",
     "seneca": "2.0.0",
-    "seneca-balance-client": "0.4.0",
+    "seneca-balance-client": "0.5.x",
     "seneca-entity": "0.0.1",
     "seneca-mesh": "0.7.0",
     "style-loader": "0.13.x",
