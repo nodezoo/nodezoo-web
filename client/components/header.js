@@ -6,7 +6,7 @@ export const Header = React.createClass({
   render () {
     return (
       <header className="container-fluid mtb txt-center" role="banner">
-        <a href="http://nodezoo.com" className="logo logo-nodezoo"></a>
+        <a href="/" className="logo logo-nodezoo"></a>
       </header>
     )
   }
