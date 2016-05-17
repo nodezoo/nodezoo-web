@@ -5,7 +5,7 @@ import { pushPath } from 'redux-simple-router'
 
 import * as infoActions from '../constants/info'
 
-export function getInfo (moduleName) {
+export function getInfo (moduleName, update) {
   return (dispatch) => {
     dispatch({type: infoActions.INFO_REQUEST})
 
@@ -13,8 +13,14 @@ export function getInfo (moduleName) {
       return dispatch(pushPath('/'))
     }
 
+    let requestUrl = '/api/info/' + moduleName
+
+    if (update) {
+      requestUrl += '?update=true'
+    }
+
     Request
-      .get(('/api/info/' + moduleName))
+      .get((requestUrl))
       .end((err, resp) => {
         if (err) {
           dispatch({

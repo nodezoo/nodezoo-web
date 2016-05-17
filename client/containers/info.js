@@ -16,8 +16,10 @@ export const Info = React.createClass({
   componentDidMount () {
     const dispatch = this.props.dispatch
     const moduleName = this.props.params.moduleName
+    const queryString = this.props.location.query
+    const update = queryString.update || false
 
-    dispatch(getInfo(moduleName))
+    dispatch(getInfo(moduleName, update))
   },
 
   shouldComponentUpdate () {
