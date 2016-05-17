@@ -27,7 +27,7 @@ export const Header = React.createClass({
           })()}
         </div>
         <div className="container-fluid mtb txt-center">
-          <a href="http://nodezoo.com" className="logo logo-nodezoo"></a>
+          <a href="/" className="logo logo-nodezoo"></a>
         </div>
       </header>
     )
