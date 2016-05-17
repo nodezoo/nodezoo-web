@@ -55,7 +55,6 @@ server.register(plugins, function (err) {
 
   server.route(ClientRoutes)
   server.route(ApiRoutes)
-  server.route(AuthRoutes)
 
   var seneca = server.seneca
 
