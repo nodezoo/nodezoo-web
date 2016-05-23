@@ -13,6 +13,8 @@ import Shell from '../containers/shell'
 import Search from '../containers/search'
 import Info from '../containers/info'
 import Login from '../containers/login'
+import ResetPassword from '../containers/reset-password'
+import ChangePassword from '../containers/change-password'
 
 export default function createRootComponent (store) {
   // Sets react router up so that it uses browser
@@ -31,8 +33,14 @@ export default function createRootComponent (store) {
       <Router history={history}>
         <Route path="/" component={Shell}>
           <IndexRoute component={Search} />
-          <Route path="info(/:moduleName)" component={Info}/>
-          <Route path="login" component={Login}/>
+          <Route path="info(/:moduleName)" component={Info} />
+          <Route path="auth">
+            <Route path="login" component={Login} />
+            <Route path="reset">
+              <IndexRoute component={ResetPassword} />
+              <Route path="(:token)" component={ChangePassword} />
+            </Route>
+          </Route>
         </Route>
       </Router>
     </Provider>
