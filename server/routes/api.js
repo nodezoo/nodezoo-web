@@ -21,7 +21,9 @@ module.exports = [
     method: 'GET',
     path: '/api/info/{name}',
     handler: function (request, reply) {
-      var pattern = {role: 'info', cmd: 'get', name: request.params.name}
+
+      var update = request.query.update || false
+      var pattern = {role: 'info', cmd: 'get', name: request.params.name, update: update}
       var payload = {}
 
       request.seneca.act(pattern, payload, function (err, data) {
