@@ -1,16 +1,48 @@
 'use strict'
 
 /*
- * TODO This is a provisional implementation
+ * This is a fake implementation
  */
 
-export function doLogin(username, password, cb) {
-  if (username == 'admin' && password == 'admin')
-    return cb({isLoggedIn: true, userName: 'Admin User', hasError: false, errorMessage: null})
-
-  cb({isLoggedIn: false, userName: null, hasError: true, errorMessage: 'Invalid credentials'})
+const LoggedUser = {
+  lastLoggedIn: Date.now(),
+  fullName: 'Admin User'
 }
 
-export function doLogout() {
-  console.log("doLogout")
+export function doLogin(username, password, cb) {
+  let args = ['Invalid credentials'];
+
+  if (username == 'admin' && password == 'admin') {
+    sessionStorage.setItem('LoggedUser', JSON.stringify(LoggedUser))
+
+    args = [null, LoggedUser]
+  }
+
+  setTimeout(() => { cb.apply(null, args) }, 1000)
+}
+
+export function resetPassword(email, cb) {
+  let errorMessage = null
+
+  if (email != 'test@test.com') {
+    errorMessage = 'User not found'
+  }
+
+  setTimeout(() => { cb(errorMessage) }, 1000)
+}
+
+export function changePassword(newPassword, passwordRepeat, token, cb) {
+  let errorMessage = null
+
+  if (token != 1234) {
+    errorMessage = 'Wrong token'
+  }
+
+  setTimeout(() => { cb(errorMessage) }, 1000)
+}
+
+export function getUserInfo() {
+  let userInfo = sessionStorage.getItem('LoggedUser')
+
+  return userInfo ? JSON.parse(userInfo) : null
 }
