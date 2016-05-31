@@ -41,6 +41,14 @@ export function changePassword(newPassword, passwordRepeat, token, cb) {
   setTimeout(() => { cb(errorMessage) }, 1000)
 }
 
+export function updateProfile(profileInfo, cb) {
+  let newProfile = Object.assign({}, LoggedUser, { fullName: profileInfo.fullName })
+
+  sessionStorage.setItem('LoggedUser', JSON.stringify(newProfile))
+
+  setTimeout(() => { cb(null, newProfile) }, 1000)
+}
+
 export function getUserInfo() {
   let userInfo = sessionStorage.getItem('LoggedUser')
 
