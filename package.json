@@ -24,7 +24,8 @@
     "webpack.config.js"
   ],
   "scripts": {
-    "test": "mocha --compilers .:test/compiler.js test/*test.js",
+    "test": "istanbul cover _mocha -- test/*test.js --compilers .:test/utils/compiler.js",
+    "open-coverage" : "open ./coverage/lcov-report/index.html",
     "lint": "lab test -dL",
     "copy": "copyfiles -f ./client/assets/img/favicon.png ./dist/img",
     "build": "npm run copy & webpack --progress --colors",
@@ -78,11 +79,13 @@
     "eslint-plugin-react": "3.16.x",
     "eslint-plugin-standard": "1.3.1",
     "file-loader": "0.8.x",
+    "istanbul": "^1.0.0-alpha.2",
     "jsdom": "8.4.0",
     "lab": "8.0.2",
     "mocha": "2.4.5",
     "postcss": "5.0.14",
     "postcss-loader": "0.8.0",
+    "react-addons-test-utils": "^0.14.8",
     "stylus-loader": "1.4.3",
     "url-loader": "0.5.7",
     "webpack": "1.12.x"
