@@ -68,7 +68,13 @@ server.register(plugins, function (err) {
       }
     })
   } else {
-    seneca.use('mesh', {auto: true})
+    var mesh_opts = {
+      auto: true,
+      host: envs.WEB_HOST || '127.0.0.1',
+      bases: [envs.BASE_HOST || '127.0.0.1:39999']
+    }
+
+    seneca.use('mesh', mesh_opts)
     seneca.use('vidi-metrics', opts.vidi_metrics)
     seneca.use('vidi-seneca-metrics', opts.seneca_metrics)
   }
