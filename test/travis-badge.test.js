@@ -1,4 +1,4 @@
-require('./test-dom')()
+require('./utils/test-dom')()
 
 import React from 'react'
 import ReactDOM from 'react-dom'
