@@ -43,7 +43,7 @@
     "inert": "3.x.x",
     "lodash": "3.10.1",
     "moment": "2.11.x",
-    "react": "15.0.x",
+    "react": "15.1.x",
     "react-copy-to-clipboard": "4.1.x",
     "react-dom": "15.0.x",
     "react-redux": "4.4.x",
@@ -84,7 +84,7 @@
     "mocha": "2.4.5",
     "postcss": "5.0.14",
     "postcss-loader": "0.8.0",
-    "react-addons-test-utils": "^0.14.8",
+    "react-addons-test-utils": "15.1.x",
     "stylus-loader": "1.4.3",
     "url-loader": "0.5.7",
     "webpack": "1.12.x"
