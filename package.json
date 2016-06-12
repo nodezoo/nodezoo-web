@@ -87,6 +87,7 @@
     "react-addons-test-utils": "15.1.x",
     "stylus-loader": "1.4.3",
     "url-loader": "0.5.7",
-    "webpack": "1.12.x"
+    "webpack": "1.12.x",
+    "mockery": "^1.7.0"
   }
 }
