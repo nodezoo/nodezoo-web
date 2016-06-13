@@ -1,6 +1,6 @@
 {
   "name": "nodezoo-web",
-  "version": "6.1.3",
+  "version": "6.2.0",
   "description": "Frontend for NodeZoo",
   "author": "Richard Rodger",
   "contributors": [
@@ -8,7 +8,8 @@
     "Dean McDonnell (https://github.com/mcdonnelldean)",
     "Karolina Szczur (https://github.com/thefoxis)",
     "Georgette Pincin (https://github.com/Georgette)",
-    "Vladimir Islamov (https://github.com/vislamov)"
+    "Vladimir Islamov (https://github.com/vislamov)",
+    "Mihai Dima (https://github.com/mihaidma)"
   ],
   "main": "./server/start.js",
   "license": "MIT",
