@@ -1,3 +1,4 @@
+* Coveralls integration
 * Set Up Mocha and Instabul
 
 ## 11 April 2016 - 6.1.0
