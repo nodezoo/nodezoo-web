@@ -31,6 +31,9 @@ export const SearchResult = React.createClass({
             <ModuleSource data={result} sourceName="npm"/>
             {this.hasBuild(result.travis) ? null :
               <ModuleSource data={result} sourceName="travis"/>}
+            {result.coveralls && result.coveralls.badgeUrl
+              ? <ModuleSource data={result} sourceName="coveralls" imgSrc={result.coveralls.badgeUrl}/>
+              : null}
           </div>
         </div>
         <p className="module-description">
