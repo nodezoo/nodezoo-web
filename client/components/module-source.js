@@ -1,6 +1,7 @@
 'use strict'
 
 import React from 'react'
+import classNames from 'classnames'
 
 export const ModuleSource = React.createClass({
   propTypes: {
@@ -9,17 +10,12 @@ export const ModuleSource = React.createClass({
     imgSrc: React.PropTypes.string
   },
   render () {
-    let {imgSrc, sourceName} = this.props
-    let imgClassName = imgSrc && `img-badge`
-    let className = !imgSrc && `logo logo-${this.props.sourceName} ${this.props.className}`
-    let source = this.props.data[sourceName]
-    let url = source ? source.url : ''
-    let img = imgSrc && <img src={imgSrc} alt={sourceName} className={imgClassName}/>
+    let {imgSrc, sourceName, className, data: {[sourceName]: source}, data: {[sourceName]: {url: url}}} = this.props
+    let logoClass = classNames({[`logo logo-${sourceName} ${className}`]: !imgSrc})
+    let img = imgSrc && <img src={imgSrc} alt={sourceName} className="img-badge"/>
 
     return (
-      source && source.connected
-        ? <a href={url} target='_blank' target="_blank" className={className}>{img}</a>
-        : null
+      source && source.connected && <a href={url} target='_blank' target="_blank" className={logoClass}>{img}</a>
     )
   }
 })

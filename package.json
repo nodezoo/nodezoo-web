@@ -60,7 +60,8 @@
     "style-loader": "0.13.x",
     "superagent": "1.6.x",
     "vidi-metrics": "0.1.0",
-    "vidi-seneca-metrics": "0.2.0"
+    "vidi-seneca-metrics": "0.2.0",
+    "classnames": "2.2.x"
   },
   "devDependencies": {
     "babel-core": "6.4.x",
