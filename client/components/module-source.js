@@ -1,21 +1,21 @@
 'use strict'
 
 import React from 'react'
+import classNames from 'classnames'
 
 export const ModuleSource = React.createClass({
   propTypes: {
     data: React.PropTypes.object.isRequired,
-    sourceName: React.PropTypes.string.isRequired
+    sourceName: React.PropTypes.string.isRequired,
+    imgSrc: React.PropTypes.string
   },
   render () {
-    let className = `logo logo-${this.props.sourceName} ${this.props.className}`
-    let source = this.props.data[this.props.sourceName]
-    let url = source ? source.url : ''
+    let {imgSrc, sourceName, className, data: {[sourceName]: source}, data: {[sourceName]: {url: url}}} = this.props
+    let logoClass = classNames({[`logo logo-${sourceName} ${className}`]: !imgSrc})
+    let img = imgSrc && <img src={imgSrc} alt={sourceName} className="img-badge"/>
 
     return (
-      source && source.connected
-        ? <a href={url} target='_blank' className={className} target="_blank"></a>
-        : null
+      source && source.connected && <a href={url} target='_blank' target="_blank" className={logoClass}>{img}</a>
     )
   }
 })
