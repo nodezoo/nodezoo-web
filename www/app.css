@@ -69,7 +69,7 @@ a.logo {
     height: 140px;
     width: 280px;
     padding-bottom: 20px;
-    padding-left: 16%;
+    xpadding-left: 25%;
     border: 0;
 }
 
@@ -82,7 +82,7 @@ h1 {
     color: #777778;
     font-family: Arial, sans-serif;
     font-weight: 400;
-    padding-left: 16%;
+    xpadding-left: 25%;
     margin-top: 10px;
 }
 
@@ -92,14 +92,15 @@ h1 a {
     text-decoration: underline;
 }
 div.main {
-    margin: 0px auto;
+    text-align: center;
+    margin: 20px auto;
     width: 100%;
     xbackground-color:red;
     padding-bottom: 60px;
 }
 
 #query_bar {
-    xtext-align: center;
+    text-align: center;
     padding-bottom: 12px;
     padding-top: 12px;
     background: url(../img/search_bar.png);
@@ -109,21 +110,23 @@ div.main {
 }
 
 #query_form {
-    text-align: center;
+    xtext-align: center;
     xmin-width: 460px;
     xoverflow: auto;
     xheight: 45px;
+    xbackground-color:pink;
 }
 
 
 #term {
-    width: 296px;
+    width: 276px;
     border: 1px solid #222222;
     xborder: 0px;
     font:italic 14px arial;
     outline:none;
-    height: 36px;  
+    height: 38px;  
     xpadding-left: 10px;  
+    padding: 0px 10px 0px 10px;  
     color: #8b9298;
     font-weight: bold;
     vertical-align:bottom;
@@ -178,7 +181,7 @@ div.main {
     xheight: 600px;
     font-size: 15px;
     color: #4d4d4f;
-    padding: 7px 20px 20px 16%;
+    padding: 7px 20px 20px 0px;
     xwidth: 61%;
     width: 700px;
     float: left;
@@ -187,21 +190,25 @@ div.main {
 
 /*left column*/
 #results {
+    text-align: center;
+
     xheight: 600px;
     font-size: 15px;
     color: #4d4d4f;
-    padding: 7px 20px 20px 16%;
+    xpadding: 7px 20px 20px 0px;
     xwidth: 61%;
-    float: left;
+    xfloat: left;
+    xwidth: 700px;
+    xmin-width: 700px;
     width: 700px;
-    min-width: 700px;
+    margin: 20px auto;
 }
 
 
 /*right column*/
 #right_col {
     xheight: 600px;
-    width: 16%;
+    width: 25%;
     float: left;
     right: 10%;
     border-left: 1px solid #e6e6e6;
@@ -276,7 +283,7 @@ div.main {
 }
 
 div.result {
-    width: 600px;
+    xwidth: 600px;
     margin: 0px 0px 20px 0px;
     overflow: hidden;
     color: #2290c6;

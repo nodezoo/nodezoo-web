@@ -1,47 +1,56 @@
+var MOCK_SEARCH = JSON.parse(process.env.MOCK_SEARCH || 'false')
+var MOCK_INFO = JSON.parse(process.env.MOCK_INFO || 'false')
+var MOCK = MOCK_SEARCH || MOCK_INFO
+
 
 var Seneca = require('seneca')
 
-var HOST = process.env.HOST || 'localhost'
-var STATS = process.env.STATS || 'localhost'
+
+// Build the frontend server using the hapi framework.
+var app = require('..')
 
 
-require('..')(
-  {
-    hapi: { port: 8000 },
-    folder: __dirname+'/..',
-    seneca: Seneca()
-  },
-  fail,
-  function(server){
-    server.seneca
-      .test('print')
+Seneca({tag: 'web'})
+  .test('print')
 
+  .listen(9010)
 
-/*
-      .use(require('seneca-repl'), {
-        port: 33000
-      })
+  // Use port numbers for local development.
+  .client({pin:'role:search', port:9020})
+  .client({pin:'role:info', port:9030})
 
-      .use('zipkin-tracer', {sampling:1})
+  .ready(function(){
+    var server = app({seneca: this})
 
-      .use('msgstats',{
-        udp: { host: STATS },
-        pins:['role:info,cmd:get','role:search,cmd:search']
-      })
-
-      .use('mesh',{})
-*/
-
-      .ready(function(){
-        server.seneca.log.info('hapi',server.info)
-        server.start(fail)
-      })
+    this.log.info(server.info)
   })
 
 
-function fail(err) {
-  if( err ) {
-    console.log( err )
-    process.exit(1)
+// Run mock services that this service depends on.
+if (MOCK) {
+  var mock = Seneca({tag:'mock'})
+        .test('print')
+
+  if (MOCK_SEARCH) {
+    mock
+    .listen(9020)
+    .add('role:search', function (msg, reply) {
+      reply({
+
+        // Create fake results using each term of the query.
+        items: msg.query.split(/\s+/).map(function (term) {
+          return {name:term, version:'1.0.0', desc:term+'!'}
+        })
+      })
+    })
   }
+
+  if (MOCK_INFO) {
+    mock
+    .listen(9030)
+    .add('role:info', function (msg, reply) {
+      reply({npm:{name:msg.name, version:'1.0.0'}})
+    })
+  }
+
 }

@@ -5,40 +5,29 @@ var chairo     = require('chairo')
 var handlebars = require('handlebars')
 
 
-module.exports = function( options, fail, done ) {
+module.exports = function(options) {
+  var folder = options.folder || __dirname
 
   var server = new hapi.Server()
-  server.connection(options.hapi)
+  server.connection({port: options.port || 8000})
 
-  server.register( vision, fail )
-  server.register( inert, fail )
-  server.register( {register:chairo, options:{seneca:options.seneca}}, fail)
+  server.register( vision )
+  server.register( inert )
+  server.register( {register:chairo, options:{seneca:options.seneca}} )
   
   server.route({
     method: 'GET',
     path: '/{path*}',
     handler: {
       directory: {
-        path: options.folder + '/www',
+        path: folder + '/www',
       }
     }
   })
-
-/*
-  server.route({
-    method: 'GET',
-    path: '/res/{path*}',
-    handler: {
-      directory: {
-        path: options.folder + '/bower_components',
-      }
-    }
-  })
-*/
 
   server.views({
     engines: { html: handlebars },
-    path: options.folder + '/www',
+    path: folder + '/www',
     layout: true
   })
 
@@ -54,7 +43,9 @@ module.exports = function( options, fail, done ) {
     handler: function( req, reply )
     {
       server.seneca.act('role:info,cmd:get',{name:req.params.mod}, function(err,mod){
-        if( err ) return reply(err)
+        if( err ) {
+          mod = {}
+        }
 
         mod.no_npm = !mod.npm
         mod.no_github = !mod.github
@@ -72,9 +63,15 @@ module.exports = function( options, fail, done ) {
       server.seneca.act(
         'role:search,cmd:search',{query:req.query.q},
         function(err,out){
-          reply(err||out)
+          if (err) {
+            out = {items:[]}
+          }
+
+          reply(out)
         })
     }})
 
-  done(server)
+  server.start()
+
+  return server
 }
