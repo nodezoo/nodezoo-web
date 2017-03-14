@@ -1,21 +1,27 @@
 {
   "name": "nodezoo-web",
   "version": "1.0.0-tms-dev",
-  "description": "",
+  "description": "nodezoo-web",
   "main": "web.js",
+  "keywords": [
+    "nodezoo",
+    "seneca",
+    "web",
+    "microservice"
+  ],
   "scripts": {
     "test": "lab -P test"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rjrodger/nodezoo-web.git"
+    "url": "https://github.com/nodezoo/nodezoo-web.git"
   },
-  "author": "",
+  "author": "Richard Rodger (http://richardrodger.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rjrodger/nodezoo-web/issues"
+    "url": "https://github.com/nodezoo/nodezoo-web/issues"
   },
-  "homepage": "https://github.com/rjrodger/nodezoo-web",
+  "homepage": "https://github.com/nodezoo/nodezoo-web",
   "dependencies": {
     "chairo": "3.0.0",
     "handlebars": "4.0.6",
