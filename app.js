@@ -12,7 +12,7 @@ module.exports = function( options, fail, done ) {
 
   server.register( vision, fail )
   server.register( inert, fail )
-  server.register( {register:chairo, options:options.seneca}, fail)
+  server.register( {register:chairo, options:{seneca:options.seneca}}, fail)
   
   server.route({
     method: 'GET',

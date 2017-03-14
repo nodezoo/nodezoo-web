@@ -128,7 +128,7 @@ div.main {
     text-align: center;
     min-width: 460px;
     overflow: auto;
-	height: 49px;
+    height: 40px;
 }
 
 #query_submit {
@@ -136,7 +136,8 @@ div.main {
     border: 1px solid #222222;
     background: url(../img/search.png);
     background-repeat: repeat-x;
-    background-position: 0px 0px;
+    background-position: 0px -102px;
+    background-color: #268fe8;
     font-weight: 700;
     padding-left: 20px;
     padding-right: 20px;
@@ -146,10 +147,11 @@ div.main {
     text-shadow: 1px -1px 1px #333333;
     font-family: 'Rationale', sans-serif;
     font-size: 18px;
-    height: 45px;
-	vertical-align: bottom;
+    height: 40px;
+    vertical-align: bottom;
 }
 
+/*
 #query_submit:hover {
     color: #ffffff;
     background-color: #268fe8;
@@ -157,6 +159,7 @@ div.main {
     background-repeat: repeat-x;
     background-position: 0px -102px;
 }
+*/
 
 #wrapper {
     width: 100%;

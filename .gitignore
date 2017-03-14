@@ -25,3 +25,6 @@ test/data
 
 old/*
 bower_components/*
+
+
+docker/web/app
