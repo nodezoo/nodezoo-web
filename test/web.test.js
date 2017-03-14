@@ -1,3 +1,5 @@
+/* Copyright (c) 2014-2017 Richard Rodger and other contributors, MIT License */
+
 var ChildProcess = require('child_process')
 var Path = require('path')
 var Code = require('code')

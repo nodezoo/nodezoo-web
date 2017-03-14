@@ -1,3 +1,5 @@
+/* Copyright (c) 2014-2017 Richard Rodger and other contributors, MIT License */
+
 var hapi       = require('hapi')
 var vision     = require('vision')
 var inert      = require('inert')

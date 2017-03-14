@@ -1,6 +1,4 @@
-'use strict';
-
-
+/* Copyright (c) 2014-2017 Richard Rodger and other contributors, MIT License */
 
 
 var app = {

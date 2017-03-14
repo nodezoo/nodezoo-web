@@ -1,3 +1,5 @@
+/* Copyright (c) 2014-2017 Richard Rodger and other contributors, MIT License */
+
 var MOCK_SEARCH = JSON.parse(process.env.MOCK_SEARCH || 'false')
 var MOCK_INFO = JSON.parse(process.env.MOCK_INFO || 'false')
 var MOCK = MOCK_SEARCH || MOCK_INFO
