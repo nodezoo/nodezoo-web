@@ -108,42 +108,50 @@ div.main {
     visibility: visible;
 }
 
+#query_form {
+    text-align: center;
+    xmin-width: 460px;
+    xoverflow: auto;
+    xheight: 45px;
+}
+
+
 #term {
-    width: 310px;
+    width: 296px;
     border: 1px solid #222222;
     xborder: 0px;
     font:italic 14px arial;
     outline:none;
-    height: 40px;  
-    padding-left: 10px;  
+    height: 36px;  
+    xpadding-left: 10px;  
     color: #8b9298;
     font-weight: bold;
     vertical-align:bottom;
     background-color: #ffffff;
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
+    xborder-bottom-left-radius: 10px;
+    xborder-top-left-radius: 10px;
+    border-radius: 10px;
 }
 
-#query_form {
-    text-align: center;
-    min-width: 460px;
-    overflow: auto;
-    height: 40px;
-}
 
 #query_submit {
-    margin-left: -6px;
+    width: 300px;
+    xmargin-left: -6px;
     border: 1px solid #222222;
     background: url(../img/search.png);
     background-repeat: repeat-x;
     background-position: 0px -102px;
     background-color: #268fe8;
     font-weight: 700;
-    padding-left: 20px;
-    padding-right: 20px;
+    xpadding-left: 20px;
+    xpadding-right: 20px;
     color: #ffffff;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
+
+    xborder-bottom-right-radius: 10px;
+    xborder-top-right-radius: 10px;
+
+    border-radius: 10px;
+
     text-shadow: 1px -1px 1px #333333;
     font-family: 'Rationale', sans-serif;
     font-size: 18px;

@@ -24,6 +24,7 @@ module.exports = function( options, fail, done ) {
     }
   })
 
+/*
   server.route({
     method: 'GET',
     path: '/res/{path*}',
@@ -33,6 +34,7 @@ module.exports = function( options, fail, done ) {
       }
     }
   })
+*/
 
   server.views({
     engines: { html: handlebars },
