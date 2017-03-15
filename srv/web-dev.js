@@ -15,6 +15,8 @@ var app = require('..')
 Seneca({tag: 'web'})
   .test('print')
 
+  .use('seneca-repl', {port:10010})
+
   .listen(9010)
 
   // Use port numbers for local development.

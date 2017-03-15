@@ -28,7 +28,8 @@
     "hapi": "16.1.0",
     "inert": "4.1.0",
     "seneca": "3.3.0",
-    "vision": "4.1.1"
+    "vision": "4.1.1",
+    "seneca-repl": "1.0.0"
   },
   "devDependencies": {
     "code": "4.0.0",
