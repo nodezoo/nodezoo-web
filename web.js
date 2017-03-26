@@ -73,6 +73,17 @@ module.exports = function(options) {
         })
     }})
 
+
+  server.route({ 
+    method: 'GET', path: '/api/suggest', 
+    handler: function( req, reply ){
+      server.seneca.act(
+        'role:suggest,cmd:suggest',{query:req.query.q},
+        function(err,out){
+          reply(out||[])
+        })
+    }})
+
   server.start()
 
   return server

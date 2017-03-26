@@ -456,3 +456,22 @@ div.tm {
 
 
 
+#suggestions {
+  position: absolute;
+  display: none;
+  top: 0px;
+  left: 0px;
+  list-style-type: none;
+  padding: 0px 4px;
+  margin: 0px 0px 0px 6px;
+  background-color: white;
+  font:italic 14px arial;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+
+.hisuggest {
+  background-color: #ccc;
+}
+

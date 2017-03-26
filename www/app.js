@@ -16,7 +16,6 @@ app.display_results = function(body) {
   var divr = $('<div>')
   for(var i = 0; i < items.length; i++) {
     var item = items[i]
-    //console.log(item)
     var result = app.tm.result.clone()
 
     result.find('div.rank').css('background-image','url(img/hex'+item.rank+'.png)')
@@ -40,14 +39,6 @@ app.display_results = function(body) {
       .attr('href',"http://npmjs.org/package/"+item.name)
 
     result.find('p.desc').text(item.desc)
-
-    /*
-    var maintsdiv = result.find('div.maints').empty()
-    for(var mI = 0; mI < item.maints.length; mI++) {
-      //console.log(item.maints[mI])
-      maintsdiv.append( $('<a>').attr('href','?q='+item.maints[mI]).text(item.maints[mI]) )
-    }
-     */
 
     result.find('a.similar').attr('href','?s='+item.name)
 
@@ -77,6 +68,30 @@ app.display_results = function(body) {
   app.em.welcome.hide()
 }
 
+
+app.display_suggestions = function(body) {
+  if (0 == body.length) {
+    app.em.suggestions.hide().empty()
+    return
+  }
+
+  app.em.suggestions.empty().css({
+    top: app.em.term.position().top + app.em.term.height(),
+    left: app.em.term.position().left
+  }).show()
+
+  body.forEach(function(suggestion) {
+    app.em.suggestions.append(
+      $('<li>')
+        .click(function () {
+          app.em.suggestions.empty().hide()
+          app.em.term.val(suggestion)
+        })
+        .text(suggestion))
+  })
+}
+
+
 app.query_last = ''
 
 app.query = function(q) {
@@ -92,7 +107,7 @@ app.query = function(q) {
     document.location.href = href+ '#q='+eq 
   }
 
-  app.record_search(q)
+  // app.record_search(q)
 
   $.ajax({
     url: "/api/query?q="+eq,
@@ -101,13 +116,34 @@ app.query = function(q) {
 }
 
 
-app.record_search = function(term) {
-  clearTimeout(app.record_search_interval)
-  app.record_search_interval = setTimeout(function(){
-    console.log(term)
-    //_gaq.push(['_trackEvent', 'act', 'search', term]);
-  },2222)
+app.suggest = function(q) {
+  $.ajax({
+    url: "/api/suggest?q="+q,
+    success: app.display_suggestions
+  })
 }
+
+
+
+app.highlight_suggest = function(direction) {
+  var suggestions = app.em.suggestions.children()
+
+  suggestions.each(function (i, s) {
+    $(s).removeClass('hisuggest')
+  })
+
+  var num_suggestions = suggestions.length
+  app.highlight_suggest.index += direction
+  app.highlight_suggest.index = Math.max(0,app.highlight_suggest.index)
+  app.highlight_suggest.index = Math.min(num_suggestions-1,app.highlight_suggest.index)
+
+  if (suggestions[app.highlight_suggest.index]) {
+    $(suggestions[app.highlight_suggest.index]).addClass('hisuggest')
+  }
+}
+
+
+app.highlight_suggest.index = -1
 
 
 app.similar = function(name) {
@@ -118,6 +154,7 @@ app.similar = function(name) {
     success: app.display_results
   })
 }
+
 
 app.route = function() {
   var up = parseUri(document.location.href)
@@ -138,17 +175,24 @@ app.route = function() {
   }
 }
 
+
 app.init = function() {
   app.em.results = $('#results')
   app.em.term    = $('#term').focus()
   app.em.welcome = $('#welcome')
   app.em.about   = $('a.about')
+  app.em.suggestions = $('#suggestions')
 
   app.tm.result = $('#result').clone().removeClass('tm')
   
   $('#query_form').submit(function(){
+    if (-1 != app.highlight_suggest.index) {
+      app.em.term.val($(app.em.suggestions.children()[app.highlight_suggest.index]).text())
+      app.highlight_suggest.index = -1
+      app.em.suggestions.hide().empty()
+    }
+
     var q = app.em.term.val()
-    //console.log('q='+q)
     app.query(q)
     return false
   })
@@ -157,71 +201,24 @@ app.init = function() {
     $('.result').removeClass('focused');
   })
 
-  $(document).keydown(function(e){
-    var result = $('.result.focused').first()
-    var term = $('#term')
-    var submit = $('#query_submit')
 
-    if( e.keyCode == 13 && result.length ) { // return
-      var href = result.find('.site').attr('href')
-      if ( href ) {
-        window.location = href
-      }
+  app.em.term.keyup(function(e) {
+    if (40 === e.keyCode) {
+      app.highlight_suggest(+1)
+      return
+    }
+    else if (38 === e.keyCode) {
+      app.highlight_suggest(-1)
+      return
+    }
+    else if (13 === e.keyCode) {
+      app.em.suggestions.hide().empty()
       return
     }
 
-    if ( e.which === 9 ) { // tab
-      var shift = e.shiftKey
-
-      if ( $(document.activeElement).attr('id') === 'term' ||
-           ( $(document.activeElement).is(submit) && shift ) ) {
-        return
-      }
-
-      e.preventDefault()
-
-      if( !result.length && !shift ) {
-        $('.result').first().addClass("focused")
-        term.blur()
-        submit.blur()
-        return
-      }
-
-      result.removeClass('focused')
-
-      var focusNext = shift ? result.prev('.result') : result.next('.result')
-
-      if( focusNext.length ) {
-        focusNext.addClass("focused");
-        $.scrollTo(focusNext, 200, {offset: -400})
-      } else if ( shift ) {
-        submit.focus();
-      } else {
-        term.focus()
-      }
-    }
-  });
-
-  app.em.term.keyup(function(ev){
-    if( 13 != ev.keyCode &&
-        9 != ev.keyCode
-      ) {
-      app.state.lastkeytime = $.now()
-    }
+    app.highlight_suggest.index = -1
+    app.suggest(app.em.term.val())
   })
-
-  app.em.about.click(function(){
-    app.em.welcome.show()
-    app.em.results.css('display','none').empty()
-
-  })
-
-  setInterval(function(){
-    if( 222 < $.now() - app.state.lastkeytime ) {
-      var q = app.em.term.val()
-      app.query(q)
-    }
-  },222)
 
   app.route()
 }

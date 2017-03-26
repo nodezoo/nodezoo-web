@@ -22,6 +22,7 @@ Seneca({tag: 'web'})
   // Use port numbers for local development.
   .client({pin:'role:search', port:9020})
   .client({pin:'role:info', port:9030})
+  .client({pin:'role:suggest', port:9050})
 
   .ready(function(){
     var server = app({seneca: this})
