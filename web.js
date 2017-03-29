@@ -34,39 +34,52 @@ module.exports = function(options) {
   })
 
   server.route({ 
-    method: 'GET', path: '/', 
-    handler: function( req, reply )
-    {
-      reply.view('index',{title:'nodezoo'})
+    method: 'GET',
+    path: '/', 
+    handler: function (request, reply) {
+      reply.view('index', {title: 'nodezoo'})
     }})
+
 
   server.route({ 
     method: 'GET', path: '/info/{mod}', 
-    handler: function( req, reply )
+    handler: function( request, reply )
     {
-      server.seneca.act('role:info,cmd:get',{name:req.params.mod}, function(err,mod){
-        if( err ) {
-          mod = {}
-        }
+      server.seneca.act(
+        {
+          role: 'info',
+          cmd: 'get',
+          name: request.params.mod
+        }, 
+        function (err, mod) {
+          if( err ) {
+            mod = {}
+          }
 
-        mod.no_npm = !mod.npm
-        mod.no_github = !mod.github
+          mod.no_npm = !mod.npm
+          mod.no_github = !mod.github
 
-        reply.view('info',{
-          title: 'nodezoo - '+req.params.mod,
-          mod: mod
+          reply.view('info',{
+            title: 'nodezoo - '+request.params.mod,
+            mod: mod
+          })
         })
-      })
     }})
 
+
   server.route({ 
-    method: 'GET', path: '/api/query', 
-    handler: function( req, reply ){
+    method: 'GET',
+    path: '/api/query', 
+    handler: function (request, reply) {
       server.seneca.act(
-        'role:search,cmd:search',{query:req.query.q},
-        function(err,out){
+        {
+          role: 'search',
+          cmd: 'search',
+          query: request.query.q
+        },
+        function (err, out) {
           if (err) {
-            out = {items:[]}
+            out = {items: []}
           }
 
           reply(out)
@@ -76,9 +89,9 @@ module.exports = function(options) {
 
   server.route({ 
     method: 'GET', path: '/api/suggest', 
-    handler: function( req, reply ){
+    handler: function( request, reply ){
       server.seneca.act(
-        'role:suggest,cmd:suggest',{query:req.query.q},
+        'role:suggest,cmd:suggest',{query:request.query.q},
         function(err,out){
           reply(out||[])
         })

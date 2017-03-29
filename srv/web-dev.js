@@ -2,7 +2,8 @@
 
 var MOCK_SEARCH = JSON.parse(process.env.MOCK_SEARCH || 'false')
 var MOCK_INFO = JSON.parse(process.env.MOCK_INFO || 'false')
-var MOCK = MOCK_SEARCH || MOCK_INFO
+var MOCK_SUGGEST = JSON.parse(process.env.MOCK_SUGGEST || 'false')
+var MOCK = MOCK_SEARCH || MOCK_INFO || MOCK_SUGGEST
 
 
 var Seneca = require('seneca')
@@ -22,7 +23,7 @@ Seneca({tag: 'web'})
   // Use port numbers for local development.
   .client({pin:'role:search', port:9020})
   .client({pin:'role:info', port:9030})
-  .client({pin:'role:suggest', port:9050})
+  .client({pin:'role:suggest', port:9060})
 
   .ready(function(){
     var server = app({seneca: this})
@@ -58,4 +59,11 @@ if (MOCK) {
     })
   }
 
+  if (MOCK_SUGGEST) {
+    mock
+    .listen(9060)
+    .add('role:suggest', function (msg, reply) {
+      reply(msg.query.split(''))
+    })
+  }
 }

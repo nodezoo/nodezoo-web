@@ -191,15 +191,8 @@ div.main {
 /*left column*/
 #results {
     text-align: center;
-
-    xheight: 600px;
     font-size: 15px;
     color: #4d4d4f;
-    xpadding: 7px 20px 20px 0px;
-    xwidth: 61%;
-    xfloat: left;
-    xwidth: 700px;
-    xmin-width: 700px;
     width: 700px;
     margin: 20px auto;
 }
@@ -475,3 +468,45 @@ div.tm {
   background-color: #ccc;
 }
 
+
+#info-parts {
+    text-align: left;
+    font-size: 15px;
+    color: #4d4d4f;
+    width: 700px;
+    margin: 20px auto;
+}
+
+
+.list-group {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+
+div.info-result {
+    margin: 0px 0px 20px 0px;
+    overflow: hidden;
+    color: #2290c6;
+    background: url(../img/grad1.png);
+    background-size: cover;
+    border: 1px solid #b2b2b2;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow:  0px 0px 4px 4px rgba(255, 255, 255, 0.2);
+    box-shadow:  0px 0px 4px 4px rgba(255, 255, 255, 0.2);
+}
+
+
+div.info-panel {
+    padding: 10px;
+}
+
+div.info-panel h2 {
+    margin: 0px;
+}
+
+div.info-result table {
+    border: 0px;
+}
