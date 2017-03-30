@@ -1,6 +1,6 @@
 build :
 	mkdir -p app
-	cp -r ../../app.js ../../bower_components ../../srv ../../www app
+	cp -r ../../web.js ../../srv ../../www app
 	docker build -t nodezoo-web .
 
 clean :

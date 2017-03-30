@@ -10,7 +10,7 @@ var Seneca = require('seneca')
 
 
 // Build the frontend server using the hapi framework.
-var app = require('..')
+var app = require('../web.js')
 
 
 Seneca({tag: 'web'})

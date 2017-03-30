@@ -27,4 +27,4 @@ old/*
 bower_components/*
 
 
-docker/web/app
+docker/stage/app
