@@ -9,7 +9,6 @@ var app = require('../web.js')
 Seneca({tag: 'web'})
   .listen(PORT)
 
-  // Use port numbers for local development.
   .client({pin:'role:search', host:'search', port:PORT})
   .client({pin:'role:info', host:'info', port:PORT})
   .client({pin:'role:suggest', host:'suggest', port:PORT})
