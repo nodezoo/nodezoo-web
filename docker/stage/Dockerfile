@@ -1,5 +1,5 @@
 
-FROM nodezoo-shared
+FROM nodezoo-shared:1
 
 ADD app /app/
 

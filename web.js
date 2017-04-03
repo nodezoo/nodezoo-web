@@ -91,7 +91,7 @@ module.exports = function(options) {
     method: 'GET', path: '/api/suggest', 
     handler: function( request, reply ){
       server.seneca.act(
-        'role:suggest,cmd:suggest',{query:request.query.q},
+        'role:suggest,cmd:suggest',{query:request.query.q,default$:[]},
         function(err,out){
           reply(out||[])
         })
