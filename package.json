@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "test": "lab -P test",
-    "mock": "MOCK_SEARCH=true MOCK_INFO=true node srv/web-dev.js"
+    "mock": "MOCK_SEARCH=true MOCK_INFO=true MOCK_SUGGEST=true node srv/web-dev.js"
   },
   "repository": {
     "type": "git",

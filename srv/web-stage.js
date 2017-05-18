@@ -7,6 +7,8 @@ var Seneca = require('seneca')
 var app = require('../web.js')
 
 Seneca({tag: 'web'})
+  .test('print')
+
   .use('zipkin-tracer', {host: 'zipkin', sampling: 1})
   .use('statsd', {host: 'stats'})
 
