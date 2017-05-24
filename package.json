@@ -28,9 +28,13 @@
     "handlebars": "4.0.6",
     "hapi": "16.1.0",
     "inert": "4.1.0",
-    "seneca": "3.3.0",
-    "vision": "4.1.1",
-    "seneca-repl": "1.0.0"
+    "seneca": "../seneca",
+    "seneca-balance-client": "../seneca-balance-client",
+    "seneca-monitor": "../seneca-monitor",
+    "seneca-entity": "2.0.0",
+    "seneca-mesh": "../seneca-mesh",
+    "seneca-repl": "1.0.0",
+    "vision": "4.1.1"
   },
   "devDependencies": {
     "code": "4.0.0",
