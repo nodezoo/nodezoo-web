@@ -15,7 +15,9 @@ module.exports = function(options) {
 
   server.register( vision )
   server.register( inert )
-  server.register( {register:chairo, options:{seneca:options.seneca}} )
+  //server.register( {register:chairo, options:{seneca:options.seneca}} )
+
+  var seneca = options.seneca
   
   server.route({
     method: 'GET',
@@ -45,7 +47,8 @@ module.exports = function(options) {
     method: 'GET', path: '/info/{mod}', 
     handler: function( request, reply )
     {
-      server.seneca.act(
+      //server.
+        seneca.act(
         {
           role: 'info',
           cmd: 'get',
@@ -71,7 +74,8 @@ module.exports = function(options) {
     method: 'GET',
     path: '/api/query', 
     handler: function (request, reply) {
-      server.seneca.act(
+      //server.
+      seneca.act(
         {
           role: 'search',
           cmd: 'search',
@@ -90,7 +94,8 @@ module.exports = function(options) {
   server.route({ 
     method: 'GET', path: '/api/suggest', 
     handler: function( request, reply ){
-      server.seneca.act(
+      //server.
+        seneca.act(
         'role:suggest,cmd:suggest',{query:request.query.q,default$:[]},
         function(err,out){
           reply(out||[])

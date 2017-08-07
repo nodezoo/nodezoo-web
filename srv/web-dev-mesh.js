@@ -8,13 +8,13 @@ var app = require('../web.js')
 
 
 Seneca({tag: 'web'})
-  .test()
+  //.test()
+  .test('print')
   .use('monitor')
-  .use('mesh', {
-    xbases:['127.0.0.1:39000'],
-    xhost:'127.0.0.1',
-    xsneeze:{silent:false}
-  })
+
+  .use('mesh')
+
+  .use('seneca-repl', {port:10010})
 
   .ready(function(){
     var server = app({seneca: this})
