@@ -3,7 +3,6 @@
 var hapi       = require('hapi')
 var vision     = require('vision')
 var inert      = require('inert')
-var chairo     = require('chairo')
 var handlebars = require('handlebars')
 
 
@@ -15,7 +14,6 @@ module.exports = function(options) {
 
   server.register( vision )
   server.register( inert )
-  //server.register( {register:chairo, options:{seneca:options.seneca}} )
 
   var seneca = options.seneca
   
@@ -74,7 +72,6 @@ module.exports = function(options) {
     method: 'GET',
     path: '/api/query', 
     handler: function (request, reply) {
-      //server.
       seneca.act(
         {
           role: 'search',
@@ -94,7 +91,6 @@ module.exports = function(options) {
   server.route({ 
     method: 'GET', path: '/api/suggest', 
     handler: function( request, reply ){
-      //server.
         seneca.act(
         'role:suggest,cmd:suggest',{query:request.query.q,default$:[]},
         function(err,out){
