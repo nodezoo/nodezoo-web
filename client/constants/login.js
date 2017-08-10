@@ -1,1 +1,0 @@
-export const UPDATE_LOGIN_STATE = 'UPDATE_LOGIN_STATE'
