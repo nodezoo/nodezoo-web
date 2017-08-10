@@ -1,0 +1,43 @@
+{
+  "name": "nodezoo-web",
+  "version": "1.0.0",
+  "description": "nodezoo-web",
+  "main": "web.js",
+  "keywords": [
+    "nodezoo",
+    "seneca",
+    "web",
+    "microservice"
+  ],
+  "scripts": {
+    "test": "lab -P test",
+    "mock": "MOCK_SEARCH=true MOCK_INFO=true MOCK_SUGGEST=true node srv/web-dev.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodezoo/nodezoo-web.git"
+  },
+  "author": "Richard Rodger (http://richardrodger.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nodezoo/nodezoo-web/issues"
+  },
+  "homepage": "https://github.com/nodezoo/nodezoo-web",
+  "dependencies": {
+    "handlebars": "4.0.6",
+    "hapi": "16.1.0",
+    "inert": "4.1.0",
+    "seneca": "3.4.2",
+    "seneca-balance-client": "0.6.1",
+    "seneca-monitor": "0.1.0",
+    "seneca-entity": "2.0.2",
+    "seneca-mesh": "0.11.0",
+    "seneca-repl": "1.1.2",
+    "vision": "4.1.1"
+  },
+  "devDependencies": {
+    "code": "4.1.x",
+    "lab": "14.0.x",
+    "wreck": "10.0.x"
+  }
+}

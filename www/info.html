@@ -1,0 +1,76 @@
+<div class="main">
+ 
+<a href="http://nodezoo.com" class="logo"><img src="/img/logo80.png"></a>
+
+<div id="query_bar">
+</div>
+
+
+<div id="wrapper">
+
+<div id="info-parts">
+
+
+
+{{#*inline "loading"}}
+<br />
+<div class="jumbotron">
+  <div class="container">
+    <h3>Loading</h3>
+    <p>Loading info. Please refresh the page.</p>
+    <p><a href="#" class="btn btn-primary btn-lg" role="button">Refresh</a></p>
+  </div>
+</div>
+{{/inline}}
+
+
+{{#if mod}}
+{{#with mod}}
+
+  {{#if npm}}
+  {{#with npm}}
+<div id="result" class="info-result">
+<div class="panel panel-default info-panel">
+  <h2>npm</h2>
+  <table>
+    <tr><th>Name:</th><td>{{name}}</td></tr>
+    <tr><th>Id:</th><td>{{id}}</td></tr>
+    <tr><th>Version:</th><td>{{version}}</td></tr>
+    <tr><th>Git Url:</th><td>{{giturl}}</td></tr>
+  </table>
+</div>
+</div>
+  {{/with}}
+  {{/if}}
+
+  {{#if no_npm}}
+  {{> loading}}
+  {{/if}}
+
+
+  {{#if github}}
+  {{#with github}}
+<div id="result" class="info-result">
+<div class="panel panel-default info-panel">
+  <h2>github</h2>
+  <table>
+    <tr><th>Modified:</th><td>{{last}}</td></tr>
+    <tr><th>Id:</th><td>{{id}}</td></tr>
+    <tr><th>Repo:</th><td>{{repo}}</td></tr>
+    <tr><th>Forks:</th><td>{{forks}}</td></tr>
+    <tr><th>Stars:</th><td>{{stars}}</td></tr>
+    <tr><th>Watchers:</th><td>{{watches}}</td></tr>
+    <tr><th>Owner:</th><td>{{owner}}</td></tr>
+  </table>
+</div>
+</div>
+  {{/with}}
+  {{/if}}
+
+{{/with}}
+{{else}}
+  {{> loading}}
+{{/if}}
+
+</div>
+</div>
